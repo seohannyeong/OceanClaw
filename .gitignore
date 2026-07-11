@@ -1,0 +1,17 @@
+# 환경
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# 생성물
+index/*.faiss
+index/*.json
+
+# 민감 데이터 (실제 정비이력/매뉴얼은 커밋 금지)
+data/*.pdf
+data/*.csv
+
+# OS
+.DS_Store
