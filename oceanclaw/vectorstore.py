@@ -41,7 +41,9 @@ class VectorStore:
     def save(self, prefix: str) -> None:
         import faiss
 
-        faiss.write_index(self.index, prefix + ".faiss")
+        serialized = faiss.serialize_index(self.index)
+        with open(prefix + ".faiss", "wb") as f:
+            f.write(serialized.tobytes())
         with open(prefix + ".json", "w", encoding="utf-8") as f:
             json.dump(self.docs, f, ensure_ascii=False)
 
@@ -49,7 +51,9 @@ class VectorStore:
     def load(cls, prefix: str) -> "VectorStore":
         import faiss
 
-        index = faiss.read_index(prefix + ".faiss")
+        with open(prefix + ".faiss", "rb") as f:
+            data = np.frombuffer(f.read(), dtype="uint8")
+        index = faiss.deserialize_index(data)
         with open(prefix + ".json", encoding="utf-8") as f:
             docs = json.load(f)
         return cls(index, docs)

@@ -21,6 +21,9 @@ INDEX_DIR = ROOT / "index"
 PDF_PATH = Path(os.getenv("PDF_PATH", str(DATA_DIR / "manual.pdf")))
 CSV_PATH = Path(os.getenv("CSV_PATH", str(DATA_DIR / "maintenance_logs.csv")))
 
+# LLM provider
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "ollama").strip().lower()
+
 # Gemini
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 # NOTE: 접근 가능한 모델명으로 .env에서 바꿔도 된다.
@@ -28,6 +31,11 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 #   안전한 기본값으로 널리 쓰이는 모델을 둔다.
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 EMBED_MODEL = os.getenv("EMBED_MODEL", "text-embedding-004")
+
+# Ollama
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
+OLLAMA_CHAT_MODEL = os.getenv("OLLAMA_CHAT_MODEL", "gemma3:4b")
+OLLAMA_EMBED_MODEL = os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text")
 
 # 검색/청크 파라미터
 TOP_K_PDF = int(os.getenv("TOP_K_PDF", "4"))

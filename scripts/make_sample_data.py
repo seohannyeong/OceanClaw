@@ -133,5 +133,5 @@ if __name__ == "__main__":
     csv_path = DATA_DIR / "maintenance_logs.csv"
     make_pdf(pdf_path)
     make_csv(csv_path)
-    print(f"✅ 샘플 PDF 생성: {pdf_path} ({len(MANUAL_PAGES)} 페이지)")
-    print(f"✅ 샘플 CSV 생성: {csv_path} ({len(CSV_ROWS)} 행)")
+    print(f"[OK] 샘플 PDF 생성: {pdf_path} ({len(MANUAL_PAGES)} 페이지)")
+    print(f"[OK] 샘플 CSV 생성: {csv_path} ({len(CSV_ROWS)} 행)")
