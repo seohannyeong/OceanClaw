@@ -1,48 +1,46 @@
-"""환경설정 한 곳 모음. 값은 .env 파일이나 환경변수로 덮어쓸 수 있다."""
+"""Project paths and settings."""
 
 from __future__ import annotations
 
 import os
 from pathlib import Path
 
-try:
-    from dotenv import load_dotenv
-
-    load_dotenv()
-except ImportError:  # python-dotenv 미설치 시에도 동작
-    pass
-
-
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
+RAW_DIR = DATA_DIR / "raw"
+INTERIM_DIR = DATA_DIR / "interim"
+PROCESSED_DIR = DATA_DIR / "processed"
 INDEX_DIR = ROOT / "index"
 
-# 입력 데이터 (샘플 또는 실제 파일 경로)
-PDF_PATH = Path(os.getenv("PDF_PATH", str(DATA_DIR / "manual.pdf")))
-CSV_PATH = Path(os.getenv("CSV_PATH", str(DATA_DIR / "maintenance_logs.csv")))
 
-# LLM provider
-LLM_PROVIDER = os.getenv("LLM_PROVIDER", "ollama").strip().lower()
+def project_path(value: str) -> Path:
+    path = Path(value)
+    return path if path.is_absolute() else ROOT / path
 
-# Gemini
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-# NOTE: 접근 가능한 모델명으로 .env에서 바꿔도 된다.
-#   계획서 기준: 답변 gemini-3.1-flash / 임베딩 gemini-embedding-001
-#   안전한 기본값으로 널리 쓰이는 모델을 둔다.
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
-EMBED_MODEL = os.getenv("EMBED_MODEL", "text-embedding-004")
 
-# Ollama
-OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
-OLLAMA_CHAT_MODEL = os.getenv("OLLAMA_CHAT_MODEL", "gemma3:4b")
-OLLAMA_EMBED_MODEL = os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text")
+PDF_PATH = project_path(
+    os.getenv("PDF_PATH", "data/raw/yanmar_6lf_operation_manual.pdf")
+)
+PDF_PAGES_PATH = project_path(
+    os.getenv("PDF_PAGES_PATH", "data/interim/pdf_pages.jsonl")
+)
+PDF_CHUNKS_PATH = project_path(
+    os.getenv("PDF_CHUNKS_PATH", "data/processed/pdf_chunks.jsonl")
+)
 
-# 검색/청크 파라미터
-TOP_K_PDF = int(os.getenv("TOP_K_PDF", "4"))
-TOP_K_CSV = int(os.getenv("TOP_K_CSV", "5"))
-CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "700"))
+CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "800"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "120"))
 
-# 인덱스 저장 위치
-PDF_INDEX_PREFIX = str(INDEX_DIR / "pdf")
-CSV_INDEX_PREFIX = str(INDEX_DIR / "csv")
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434").rstrip("/")
+OLLAMA_CHAT_MODEL = os.getenv("OLLAMA_CHAT_MODEL", "gemma3:4b")
+OLLAMA_EMBED_MODEL = os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text")
+OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "60"))
+
+PDF_FAISS_PATH = project_path(os.getenv("PDF_FAISS_PATH", "index/pdf.faiss"))
+PDF_DOCS_PATH = project_path(os.getenv("PDF_DOCS_PATH", "index/pdf_docs.json"))
+
+SENSOR_EVENTS_PATH = project_path(
+    os.getenv("SENSOR_EVENTS_PATH", "data/processed/sensor_events.csv")
+)
+SENSOR_FAISS_PATH = project_path(os.getenv("SENSOR_FAISS_PATH", "index/sensor.faiss"))
+SENSOR_DOCS_PATH = project_path(os.getenv("SENSOR_DOCS_PATH", "index/sensor_docs.json"))

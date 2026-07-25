@@ -1,6 +1,3 @@
-google-genai>=1.0.0
-faiss-cpu>=1.7.4
-pypdf>=4.0.0
-numpy>=1.24.0
-python-dotenv>=1.0.0
-reportlab>=4.0.0   # 샘플 PDF 생성용 (scripts/make_sample_data.py)
+pypdf>=5.0.0
+faiss-cpu>=1.8.0
+numpy>=1.26.0
