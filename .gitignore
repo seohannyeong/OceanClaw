@@ -3,10 +3,4 @@
 __pycache__/
 *.pyc
 
-data/raw/*.pdf
-data/raw/*.csv
-data/interim/*.jsonl
-data/processed/*.jsonl
-data/processed/*.csv
-index/
 artifacts/
