@@ -24,7 +24,10 @@ class AskRequest(BaseModel):
     question: str = Field(..., min_length=1, examples=["엔진 오일 점검 방법 알려줘"])
     top_k: int = Field(4, ge=1, le=10)
     min_score: float = Field(0.0, ge=0.0, le=1.0)
-    route: Route | None = Field(None, description="manual, sensor, both 중 하나로 검색 경로를 고정")
+    route: Route | None = Field(
+        None,
+        description="manual, sensor, both 중 하나로 검색 경로를 고정",
+    )
 
 
 class SearchRequest(BaseModel):

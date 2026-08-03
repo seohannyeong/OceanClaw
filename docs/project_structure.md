@@ -134,6 +134,13 @@ python scripts/search_sensor.py "GT compressor decay warning" --top-k 3
 python scripts/ask.py "엔진 오일 점검 방법 알려줘" --top-k 3
 ```
 
+Jetson처럼 응답이 느린 환경에서는 다음처럼 timeout을 늘려 실행합니다.
+
+```bash
+export OLLAMA_TIMEOUT=300
+python scripts/ask.py "엔진 오일 점검 방법 알려줘" --top-k 1 --route manual
+```
+
 ### Wiki 문서 생성
 
 ```powershell

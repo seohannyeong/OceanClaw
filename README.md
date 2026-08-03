@@ -32,6 +32,13 @@ python scripts/ask.py "GT compressor warning 이벤트 보여줘" --top-k 3
 python scripts/ask.py "GT compressor warning 이벤트와 관련 매뉴얼 같이 알려줘" --route both --top-k 2
 ```
 
+Jetson처럼 응답이 느린 환경에서는 timeout을 늘려 실행합니다.
+
+```bash
+export OLLAMA_TIMEOUT=300
+python scripts/ask.py "엔진 오일 점검 방법 알려줘" --top-k 1 --route manual
+```
+
 ### 4. API 서버 실행
 
 로컬 PC에서만 접속할 때:
@@ -91,6 +98,7 @@ wiki/
 - Sensor event CSV 변환 및 검색 구현 완료
 - PDF 검색과 sensor 검색 통합 완료
 - Ollama chat 기반 답변 생성 구현 완료
+- Jetson 실행을 고려해 Ollama 기본 timeout 300초 적용
 - FastAPI 기반 외부 접속 API 구현 완료
 - Obsidian 호환 LLM Wiki 기본 구조 생성 완료
 - RAG 근거 기반 Wiki Markdown 자동 생성 구현 완료

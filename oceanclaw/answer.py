@@ -102,16 +102,25 @@ def answer_question(
     min_score: float = 0.0,
     route_override: str | None = None,
 ) -> dict:
-    manual_results = search_manual(question, top_k)
-    sensor_results = search_sensor(question, top_k)
-    route = route_override or route_by_score(manual_results, sensor_results)
-
-    if route == "manual":
-        results = manual_results
-    elif route == "sensor":
-        results = sensor_results
+    if route_override == "manual":
+        route = "manual"
+        results = search_manual(question, top_k)
+    elif route_override == "sensor":
+        route = "sensor"
+        results = search_sensor(question, top_k)
+    elif route_override == "both":
+        route = "both"
+        results = search_manual(question, top_k) + search_sensor(question, top_k)
     else:
-        results = manual_results + sensor_results
+        manual_results = search_manual(question, top_k)
+        sensor_results = search_sensor(question, top_k)
+        route = route_by_score(manual_results, sensor_results)
+        if route == "manual":
+            results = manual_results
+        elif route == "sensor":
+            results = sensor_results
+        else:
+            results = manual_results + sensor_results
 
     filtered_results = [result for result in results if result["score"] >= min_score]
     expanded_query = results[0].get("expanded_query", question) if results else question

@@ -62,7 +62,11 @@ def main() -> int:
     parser.add_argument("question", nargs="?", help="Question to ask")
     parser.add_argument("--top-k", type=int, default=4)
     parser.add_argument("--min-score", type=float, default=0.0)
-    parser.add_argument("--route", choices=["manual", "sensor", "both"], help="Override automatic routing")
+    parser.add_argument(
+        "--route",
+        choices=["manual", "sensor", "both"],
+        help="Override automatic routing",
+    )
     parser.add_argument("--show-context", action="store_true")
     args = parser.parse_args()
 

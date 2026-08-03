@@ -38,7 +38,7 @@ CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "120"))
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434").rstrip("/")
 OLLAMA_CHAT_MODEL = os.getenv("OLLAMA_CHAT_MODEL", "gemma3:4b")
 OLLAMA_EMBED_MODEL = os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text")
-OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "60"))
+OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "300"))
 
 PDF_FAISS_PATH = project_path(os.getenv("PDF_FAISS_PATH", "index/pdf.faiss"))
 PDF_DOCS_PATH = project_path(os.getenv("PDF_DOCS_PATH", "index/pdf_docs.json"))
