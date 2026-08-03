@@ -11,6 +11,7 @@ RAW_DIR = DATA_DIR / "raw"
 INTERIM_DIR = DATA_DIR / "interim"
 PROCESSED_DIR = DATA_DIR / "processed"
 INDEX_DIR = ROOT / "index"
+WIKI_DIR = ROOT / "wiki"
 
 
 def project_path(value: str) -> Path:
@@ -26,6 +27,9 @@ PDF_PAGES_PATH = project_path(
 )
 PDF_CHUNKS_PATH = project_path(
     os.getenv("PDF_CHUNKS_PATH", "data/processed/pdf_chunks.jsonl")
+)
+WIKI_CHUNKS_PATH = project_path(
+    os.getenv("WIKI_CHUNKS_PATH", "data/processed/wiki_chunks.jsonl")
 )
 
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "800"))
@@ -44,3 +48,6 @@ SENSOR_EVENTS_PATH = project_path(
 )
 SENSOR_FAISS_PATH = project_path(os.getenv("SENSOR_FAISS_PATH", "index/sensor.faiss"))
 SENSOR_DOCS_PATH = project_path(os.getenv("SENSOR_DOCS_PATH", "index/sensor_docs.json"))
+
+WIKI_FAISS_PATH = project_path(os.getenv("WIKI_FAISS_PATH", "index/wiki.faiss"))
+WIKI_DOCS_PATH = project_path(os.getenv("WIKI_DOCS_PATH", "index/wiki_docs.json"))

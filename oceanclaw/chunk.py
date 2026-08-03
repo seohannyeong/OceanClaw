@@ -3,41 +3,13 @@
 from __future__ import annotations
 
 import json
-import re
 from pathlib import Path
 from typing import Dict, Iterable, List
 
-
-def split_paragraphs(text: str) -> List[str]:
-    text = text.replace("\r\n", "\n").replace("\r", "\n").strip()
-    if not text:
-        return []
-
-    blocks = [block.strip() for block in re.split(r"\n\s*\n+", text) if block.strip()]
-    if len(blocks) > 1:
-        return blocks
-
-    lines = [line.strip() for line in text.split("\n") if line.strip()]
-    return lines if lines else [text]
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 
-def split_long_text(text: str, size: int) -> List[str]:
-    words = text.split()
-    if not words:
-        return []
-
-    parts: List[str] = []
-    current = ""
-    for word in words:
-        next_text = f"{current} {word}".strip()
-        if current and len(next_text) > size:
-            parts.append(current)
-            current = word
-        else:
-            current = next_text
-    if current:
-        parts.append(current)
-    return parts
+DEFAULT_SEPARATORS = ["\n\n", "\n", ". ", " ", ""]
 
 
 def chunk_text(text: str, size: int, overlap: int) -> List[str]:
@@ -48,26 +20,17 @@ def chunk_text(text: str, size: int, overlap: int) -> List[str]:
     if overlap >= size:
         raise ValueError("chunk overlap must be smaller than chunk size")
 
-    chunks: List[str] = []
-    current = ""
+    normalized = text.replace("\r\n", "\n").replace("\r", "\n").strip()
+    if not normalized:
+        return []
 
-    for paragraph in split_paragraphs(text):
-        candidates = [paragraph]
-        if len(paragraph) > size:
-            candidates = split_long_text(paragraph, size)
-
-        for candidate in candidates:
-            next_text = f"{current}\n{candidate}".strip() if current else candidate
-            if current and len(next_text) > size:
-                chunks.append(current)
-                tail = current[-overlap:] if overlap else ""
-                current = f"{tail}\n{candidate}".strip() if tail else candidate
-            else:
-                current = next_text
-
-    if current:
-        chunks.append(current)
-    return chunks
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=size,
+        chunk_overlap=overlap,
+        separators=DEFAULT_SEPARATORS,
+        length_function=len,
+    )
+    return [chunk.strip() for chunk in splitter.split_text(normalized) if chunk.strip()]
 
 
 def read_jsonl(path: Path) -> Iterable[Dict[str, object]]:

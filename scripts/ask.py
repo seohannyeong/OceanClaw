@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ask a question and generate a grounded Korean answer."""
+"""Ask OceanClaw using manual and sensor retrieval."""
 
 from __future__ import annotations
 
@@ -21,6 +21,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 def print_answer(result: dict, show_context: bool) -> None:
     print(f"Question: {result['question']}")
+    print(f"Route: {result['route']}")
     if result["expanded_query"] != result["question"]:
         print(f"Expanded query: {result['expanded_query']}")
     print()
@@ -37,10 +38,21 @@ def print_answer(result: dict, show_context: bool) -> None:
         preview = str(item["text"]).replace("\n", " ")
         if len(preview) > 300:
             preview = preview[:300].rstrip() + "..."
-        print(
-            f"[{rank}] score={item['score']:.4f} "
-            f"page={item['page']} chunk_id={item['chunk_id']}"
-        )
+
+        if item.get("kind") == "sensor":
+            doc = item["document"]
+            print(
+                f"[{rank}] sensor score={item['score']:.4f} "
+                f"event_id={doc.get('event_id')} "
+                f"component={doc.get('component')} "
+                f"severity={doc.get('severity')}"
+            )
+        else:
+            print(
+                f"[{rank}] manual score={item['score']:.4f} "
+                f"page={item['page']} chunk_id={item['chunk_id']}"
+            )
+
         if show_context:
             print(f"    {preview}")
 
@@ -50,6 +62,7 @@ def main() -> int:
     parser.add_argument("question", nargs="?", help="Question to ask")
     parser.add_argument("--top-k", type=int, default=4)
     parser.add_argument("--min-score", type=float, default=0.0)
+    parser.add_argument("--route", choices=["manual", "sensor", "both"], help="Override automatic routing")
     parser.add_argument("--show-context", action="store_true")
     args = parser.parse_args()
 
@@ -60,6 +73,7 @@ def main() -> int:
             question=args.question,
             top_k=args.top_k,
             min_score=args.min_score,
+            route_override=args.route,
         )
         print_answer(result, args.show_context)
         return 0
@@ -75,6 +89,7 @@ def main() -> int:
             question=question,
             top_k=args.top_k,
             min_score=args.min_score,
+            route_override=args.route,
         )
         print_answer(result, args.show_context)
     return 0

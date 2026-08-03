@@ -1,6 +1,6 @@
 # OceanClaw
 
-선박 정비 매뉴얼과 선박 추진 센서 이벤트를 검색하는 Offline-First AI Agent 프로젝트입니다.
+선박 정비 매뉴얼 PDF와 센서 이벤트 CSV를 검색해서 답변하는 Offline-First AI Agent 프로젝트입니다.
 
 프로젝트 폴더 구조와 파일별 역할은 [docs/project_structure.md](docs/project_structure.md)를 참고하세요.
 
@@ -24,6 +24,49 @@ python scripts/build_sensor_index.py
 python scripts/search_sensor.py "GT compressor decay warning" --top-k 3
 ```
 
+### 3. 통합 질문 답변
+
+```powershell
+python scripts/ask.py "엔진 오일 점검 방법 알려줘" --top-k 3
+python scripts/ask.py "GT compressor warning 이벤트 보여줘" --top-k 3
+python scripts/ask.py "GT compressor warning 이벤트와 관련 매뉴얼 같이 알려줘" --route both --top-k 2
+```
+
+### 4. API 서버 실행
+
+로컬 PC에서만 접속할 때:
+
+```powershell
+python scripts/run_api.py --host 127.0.0.1 --port 8000
+```
+
+같은 네트워크의 다른 기기에서 접속할 때:
+
+```powershell
+python scripts/run_api.py --host 0.0.0.0 --port 8000
+```
+
+브라우저에서 확인:
+
+```text
+http://127.0.0.1:8000/docs
+http://<Jetson-IP>:8000/docs
+```
+
+### 5. Wiki 문서 생성
+
+```powershell
+python scripts/generate_wiki.py "엔진 오일 점검" --route manual --type procedure
+python scripts/generate_wiki.py "GT compressor warning" --route sensor --type log
+```
+
+### 6. Wiki 검색
+
+```powershell
+python scripts/build_wiki_index.py
+python scripts/search_wiki.py "엔진 오일 점검" --top-k 3
+```
+
 ## 주요 산출물
 
 ```text
@@ -34,19 +77,28 @@ index/pdf.faiss
 index/pdf_docs.json
 index/sensor.faiss
 index/sensor_docs.json
+index/wiki.faiss
+index/wiki_docs.json
+wiki/
 ```
 
 ## 현재 상태
 
-- PDF 기반 RAG v1 구현 완료
+- PDF 텍스트 추출 구현 완료
+- LangChain Text Splitter 기반 PDF chunk 생성 구현 완료
 - Ollama embedding + FAISS 검색 구현 완료
 - 한국어 query expansion 구현 완료
+- Sensor event CSV 변환 및 검색 구현 완료
+- PDF 검색과 sensor 검색 통합 완료
 - Ollama chat 기반 답변 생성 구현 완료
-- sensor event CSV 변환 및 검색 구현 완료
+- FastAPI 기반 외부 접속 API 구현 완료
+- Obsidian 호환 LLM Wiki 기본 구조 생성 완료
+- RAG 근거 기반 Wiki Markdown 자동 생성 구현 완료
+- Wiki Markdown FAISS 검색 구현 완료
 
 ## 다음 작업
 
-- PDF 검색과 sensor 검색 통합
-- 질문 의도 기반 라우팅
-- sensor event 기반 답변 생성
-- 검색/답변 평가 자동화
+- manual + sensor + wiki 통합 답변 연결
+- sensor event 중복 결과 요약 개선
+- Jetson Orin Nano 배포 테스트
+- FastAPI 서버를 Jetson에서 `0.0.0.0:8000`으로 실행하고 외부 접속 확인
