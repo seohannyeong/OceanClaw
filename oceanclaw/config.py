@@ -40,6 +40,12 @@ OLLAMA_CHAT_MODEL = os.getenv("OLLAMA_CHAT_MODEL", "gemma3:4b")
 OLLAMA_EMBED_MODEL = os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text")
 OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "300"))
 
+MATTERMOST_SLASH_TOKEN = os.getenv("MATTERMOST_SLASH_TOKEN", "")
+MATTERMOST_RESPONSE_TYPE = os.getenv("MATTERMOST_RESPONSE_TYPE", "ephemeral")
+MATTERMOST_DEFAULT_ROUTE = os.getenv("MATTERMOST_DEFAULT_ROUTE", "all")
+MATTERMOST_TOP_K = int(os.getenv("MATTERMOST_TOP_K", "2"))
+MATTERMOST_SAVE_LOG = os.getenv("MATTERMOST_SAVE_LOG", "true").lower() == "true"
+
 PDF_FAISS_PATH = project_path(os.getenv("PDF_FAISS_PATH", "index/pdf.faiss"))
 PDF_DOCS_PATH = project_path(os.getenv("PDF_DOCS_PATH", "index/pdf_docs.json"))
 
