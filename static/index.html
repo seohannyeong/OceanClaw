@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OceanClaw</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Ship Maintenance AI Agent</p>
+        <h1>OceanClaw</h1>
+      </div>
+      <div class="status" id="healthStatus">
+        <span class="status-dot"></span>
+        <span>서버 확인 중</span>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="workspace" aria-labelledby="askTitle">
+        <div class="section-head">
+          <div>
+            <h2 id="askTitle">정비 질문</h2>
+            <p>매뉴얼, 센서 이벤트, Wiki 문서를 함께 검색해 근거 기반 답변을 생성합니다.</p>
+          </div>
+          <a class="docs-link" href="/docs" target="_blank" rel="noreferrer">API Docs</a>
+        </div>
+
+        <form id="askForm" class="query-form">
+          <label for="question">질문</label>
+          <textarea
+            id="question"
+            name="question"
+            rows="4"
+            placeholder="예: 엔진 오일 점검 방법 알려줘"
+            required
+          ></textarea>
+
+          <div class="controls-grid">
+            <div class="field">
+              <label for="route">검색 경로</label>
+              <select id="route" name="route">
+                <option value="all">All</option>
+                <option value="manual">Manual</option>
+                <option value="sensor">Sensor</option>
+                <option value="wiki">Wiki</option>
+                <option value="both">Manual + Sensor</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="topK">Top K</label>
+              <input id="topK" name="topK" type="number" min="1" max="10" value="3" />
+            </div>
+            <label class="check-field">
+              <input id="saveLog" name="saveLog" type="checkbox" checked />
+              <span>답변을 Wiki logs에 저장</span>
+            </label>
+          </div>
+
+          <button class="primary-button" type="submit">답변 생성</button>
+        </form>
+
+        <section class="result-panel" aria-live="polite">
+          <div class="result-head">
+            <h3>답변</h3>
+            <span id="answerMeta"></span>
+          </div>
+          <div id="answerText" class="answer empty">아직 생성된 답변이 없습니다.</div>
+          <div id="sourceList" class="source-list"></div>
+          <details class="evidence-box">
+            <summary>검색 근거 보기</summary>
+            <div id="evidenceList"></div>
+          </details>
+        </section>
+      </section>
+
+      <aside class="side-panel" aria-labelledby="wikiTitle">
+        <h2 id="wikiTitle">Wiki 문서 생성</h2>
+        <p>검색된 근거를 바탕으로 Obsidian에서 열 수 있는 Markdown 문서를 생성합니다.</p>
+
+        <form id="wikiForm" class="wiki-form">
+          <label for="topic">문서 주제</label>
+          <input id="topic" name="topic" type="text" placeholder="예: 엔진 오일 점검" required />
+
+          <div class="field">
+            <label for="wikiType">문서 유형</label>
+            <select id="wikiType" name="wikiType">
+              <option value="">자동 선택</option>
+              <option value="procedure">Procedure</option>
+              <option value="component">Component</option>
+              <option value="log">Log</option>
+            </select>
+          </div>
+
+          <label class="check-field">
+            <input id="rebuildIndex" name="rebuildIndex" type="checkbox" />
+            <span>생성 후 Wiki index 갱신</span>
+          </label>
+
+          <button class="secondary-button" type="submit">Wiki 문서 생성</button>
+        </form>
+
+        <div id="wikiResult" class="wiki-result empty">생성된 Wiki 문서가 여기에 표시됩니다.</div>
+      </aside>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

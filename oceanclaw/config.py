@@ -45,6 +45,11 @@ MATTERMOST_RESPONSE_TYPE = os.getenv("MATTERMOST_RESPONSE_TYPE", "ephemeral")
 MATTERMOST_DEFAULT_ROUTE = os.getenv("MATTERMOST_DEFAULT_ROUTE", "all")
 MATTERMOST_TOP_K = int(os.getenv("MATTERMOST_TOP_K", "2"))
 MATTERMOST_SAVE_LOG = os.getenv("MATTERMOST_SAVE_LOG", "true").lower() == "true"
+MATTERMOST_WIKI_NOTE_ROUTE = os.getenv("MATTERMOST_WIKI_NOTE_ROUTE", "all")
+MATTERMOST_WIKI_NOTE_TOP_K = int(os.getenv("MATTERMOST_WIKI_NOTE_TOP_K", "3"))
+MATTERMOST_WIKI_NOTE_REBUILD_INDEX = (
+    os.getenv("MATTERMOST_WIKI_NOTE_REBUILD_INDEX", "false").lower() == "true"
+)
 
 PDF_FAISS_PATH = project_path(os.getenv("PDF_FAISS_PATH", "index/pdf.faiss"))
 PDF_DOCS_PATH = project_path(os.getenv("PDF_DOCS_PATH", "index/pdf_docs.json"))

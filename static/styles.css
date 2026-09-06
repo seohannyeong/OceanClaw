@@ -1,0 +1,403 @@
+:root {
+  color-scheme: light;
+  --bg: #eef3f0;
+  --surface: #ffffff;
+  --surface-soft: #f7faf8;
+  --line: #d6ded9;
+  --text: #18211d;
+  --muted: #64736b;
+  --accent: #0f766e;
+  --accent-dark: #0b5f59;
+  --warn: #9a5b00;
+  --danger: #b42318;
+  --shadow: 0 16px 40px rgba(22, 33, 29, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter, "Segoe UI", "Noto Sans KR", AppleSDGothicNeo, Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 32px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--warn);
+}
+
+.status.ok .status-dot {
+  background: var(--accent);
+}
+
+.status.error .status-dot {
+  background: var(--danger);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 20px;
+  width: min(1280px, calc(100% - 32px));
+  margin: 20px auto;
+}
+
+.workspace,
+.side-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.workspace {
+  padding: 24px;
+}
+
+.side-panel {
+  align-self: start;
+  padding: 22px;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.docs-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.query-form,
+.wiki-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+label {
+  color: #34413b;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-soft);
+  color: var(--text);
+  outline: none;
+}
+
+textarea {
+  min-height: 118px;
+  padding: 14px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+input,
+select {
+  min-height: 42px;
+  padding: 0 12px;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 110px minmax(190px, 1fr);
+  gap: 12px;
+  align-items: end;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.check-field {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-soft);
+  font-weight: 700;
+}
+
+.check-field input {
+  width: 16px;
+  height: 16px;
+  min-height: 0;
+  padding: 0;
+  accent-color: var(--accent);
+}
+
+.primary-button,
+.secondary-button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.primary-button {
+  background: var(--accent);
+}
+
+.secondary-button {
+  background: #26362f;
+}
+
+.primary-button:hover {
+  background: var(--accent-dark);
+}
+
+.secondary-button:hover {
+  background: #17221d;
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.result-panel {
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.result-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+#answerMeta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.answer,
+.wiki-result {
+  min-height: 120px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.empty {
+  color: var(--muted);
+}
+
+.source-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.source-pill {
+  max-width: 100%;
+  padding: 6px 9px;
+  border: 1px solid #c8d7d2;
+  border-radius: 999px;
+  background: #edf7f4;
+  color: #18564f;
+  font-size: 12px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.evidence-box {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.evidence-box summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  color: #34413b;
+  font-weight: 800;
+}
+
+.evidence-item {
+  border-top: 1px solid var(--line);
+  padding: 14px;
+}
+
+.evidence-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  color: #26362f;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.evidence-text {
+  color: #415149;
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.wiki-result {
+  margin-top: 16px;
+  min-height: 170px;
+  font-size: 14px;
+}
+
+.notice {
+  color: var(--danger);
+  font-weight: 800;
+}
+
+@media (max-width: 980px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .side-panel {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .shell {
+    width: min(100% - 20px, 1280px);
+    margin: 10px auto;
+  }
+
+  .workspace,
+  .side-panel {
+    padding: 18px;
+  }
+
+  .section-head,
+  .result-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+}

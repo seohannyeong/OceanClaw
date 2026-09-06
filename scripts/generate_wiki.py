@@ -22,7 +22,7 @@ if hasattr(sys.stdout, "reconfigure"):
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate an OceanClaw Wiki document.")
     parser.add_argument("topic", help="Wiki topic to generate")
-    parser.add_argument("--route", choices=["manual", "sensor", "both"], default="both")
+    parser.add_argument("--route", choices=["manual", "sensor", "wiki", "both", "all"], default="all")
     parser.add_argument("--type", choices=["component", "procedure", "log"], dest="wiki_type")
     parser.add_argument("--top-k", type=int, default=3)
     parser.add_argument("--out", type=Path)
@@ -37,6 +37,7 @@ def main() -> int:
         top_k=args.top_k,
         output_path=args.out,
         overwrite=args.overwrite,
+        auto_rename=not args.overwrite,
     )
 
     print("[OK] Wiki document generated")
