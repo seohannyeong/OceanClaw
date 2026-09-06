@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+import json
+from urllib.error import URLError
 from urllib.parse import parse_qs
+from urllib.request import Request as UrlRequest, urlopen
 from typing import Literal
 
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import BackgroundTasks, FastAPI, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from . import config
@@ -106,8 +109,51 @@ def format_mattermost_answer(result: dict) -> str:
     )
 
 
+def post_mattermost_response(response_url: str, payload: dict) -> None:
+    """Post a delayed slash command response back to Mattermost."""
+    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    request = UrlRequest(
+        response_url,
+        data=data,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urlopen(request, timeout=10):
+            pass
+    except URLError as exc:
+        print(f"[mattermost] failed to post delayed response: {exc}")
+
+
+def generate_and_post_mattermost_answer(question: str, response_url: str) -> None:
+    """Generate the RAG answer outside the slash command timeout window."""
+    try:
+        result = answer_question(
+            question=question,
+            top_k=config.MATTERMOST_TOP_K,
+            route_override=config.MATTERMOST_DEFAULT_ROUTE,
+            save_log=config.MATTERMOST_SAVE_LOG,
+        )
+        text = format_mattermost_answer(result)
+    except Exception as exc:  # pragma: no cover - defensive boundary for chat UX
+        text = (
+            "### OceanClaw 오류\n\n"
+            "답변 생성 중 문제가 발생했습니다.\n\n"
+            f"`{type(exc).__name__}: {exc}`"
+        )
+
+    post_mattermost_response(
+        response_url,
+        {
+            "response_type": config.MATTERMOST_RESPONSE_TYPE,
+            "username": "OceanClaw",
+            "text": text,
+        },
+    )
+
+
 @app.post("/mattermost/slash")
-async def mattermost_slash(request: Request) -> dict:
+async def mattermost_slash(request: Request, background_tasks: BackgroundTasks) -> dict:
     """Handle Mattermost custom slash command requests."""
     body = (await request.body()).decode("utf-8")
     form = {key: values[0] for key, values in parse_qs(body).items()}
@@ -121,6 +167,18 @@ async def mattermost_slash(request: Request) -> dict:
         return {
             "response_type": "ephemeral",
             "text": "질문을 입력해주세요. 예: `/oceanclaw 엔진 오일 점검 방법 알려줘`",
+        }
+
+    response_url = form.get("response_url", "")
+    if response_url:
+        background_tasks.add_task(
+            generate_and_post_mattermost_answer,
+            question,
+            response_url,
+        )
+        return {
+            "response_type": "ephemeral",
+            "text": f"OceanClaw가 답변을 생성 중입니다.\n\n**질문**\n{question}",
         }
 
     result = answer_question(

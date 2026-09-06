@@ -1,0 +1,476 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/idfqzq",
+    "id": "idfqzq",
+    "slide": 3,
+    "layoutId": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pwvq1c3y",
+      "id": "1",
+      "name": "eyebrow",
+      "bbox": [
+        72,
+        56,
+        780,
+        28
+      ],
+      "geometry": "rect",
+      "text": "DEMO 1",
+      "textPreview": "DEMO 1",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "DEMO 1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "DEMO 1",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "DEMO 1",
+              "fontSize": 18,
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2t476h4n",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        72,
+        112,
+        960,
+        92
+      ],
+      "geometry": "rect",
+      "text": "매뉴얼에서 관련 페이지를 검색합니다",
+      "textPreview": "매뉴얼에서 관련 페이지를 검색합니다",
+      "resolvedFontSize": 46,
+      "resolvedTextStyle": {
+        "fontSize": 46,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "매뉴얼에서 관련 페이지를 검색합니다"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "매뉴얼에서 관련 페이지를 검색합니다",
+          "resolvedTextStyle": {
+            "fontSize": 46,
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "매뉴얼에서 관련 페이지를 검색합니다",
+              "fontSize": 46,
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ud8z2l8",
+      "id": "3",
+      "name": "subtitle",
+      "bbox": [
+        72,
+        214,
+        1000,
+        76
+      ],
+      "geometry": "rect",
+      "text": "질문을 embedding하고 FAISS index에서 유사한 manual chunk를 찾습니다.",
+      "textPreview": "질문을 embedding하고 FAISS index에서 유사한 manual chunk를 찾습니다.",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#343A46",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "질문을 embedding하고 FAISS index에서 유사한 manual chunk를 찾습니다."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "질문을 embedding하고 FAISS index에서 유사한 manual chunk를 찾습니다.",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#343A46",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "질문을 embedding하고 FAISS index에서 유사한 manual chunk를 찾습니다.",
+              "fontSize": 25,
+              "color": "#343A46",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cz69crmp",
+      "id": "4",
+      "name": "rule",
+      "bbox": [
+        72,
+        314,
+        1136,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#B8BCC4",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xkfq5w3a",
+      "id": "5",
+      "name": "command-box",
+      "bbox": [
+        90,
+        360,
+        1100,
+        92
+      ],
+      "geometry": "rect",
+      "fillColor": "#111827",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxorah4j",
+      "id": "6",
+      "name": "command",
+      "bbox": [
+        122,
+        388,
+        1040,
+        40
+      ],
+      "geometry": "rect",
+      "text": "python scripts\\search.py \"engine oil level check dipstick MIN MAX\" --top-k 3",
+      "textPreview": "python scripts\\search.py \"engine oil level check dipstick MIN MAX\" --top-k 3",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "python scripts\\search.py \"engine oil level check dipstick MIN MAX\" --top-k 3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "python scripts\\search.py \"engine oil level check dipstick MIN MAX\" --top-k 3",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "python scripts\\search.py \"engine oil level check dipstick MIN MAX\" --top-k 3",
+              "fontSize": 24,
+              "color": "#FFFFFF",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/byx83ml4",
+      "id": "7",
+      "name": "result-key",
+      "bbox": [
+        96,
+        492,
+        1080,
+        44
+      ],
+      "geometry": "rect",
+      "text": "확인 포인트: page=69 · Check Oil Level in Engine · dipstick · MIN/MAX",
+      "textPreview": "확인 포인트: page=69 · Check Oil Level in Engine · dipstick · MIN/MAX",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "확인 포인트: page=69 · Check Oil Level in Engine · dipstick · MIN/MAX"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "확인 포인트: page=69 · Check Oil Level in Engine · dipstick · MIN/MAX",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "확인 포인트: page=69 · Check Oil Level in Engine · dipstick · MIN/MAX",
+              "fontSize": 27,
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s32p0nml",
+      "id": "8",
+      "name": "footer",
+      "bbox": [
+        72,
+        666,
+        720,
+        28
+      ],
+      "geometry": "rect",
+      "text": "OceanClaw Demo Video",
+      "textPreview": "OceanClaw Demo Video",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#606672",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "OceanClaw Demo Video"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "OceanClaw Demo Video",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#606672",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "OceanClaw Demo Video",
+              "fontSize": 16,
+              "color": "#606672",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

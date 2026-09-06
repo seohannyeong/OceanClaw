@@ -1,0 +1,763 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/1s588j",
+    "id": "1s588j",
+    "slide": 9,
+    "layoutId": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3694vqdc",
+      "id": "1",
+      "name": "eyebrow",
+      "bbox": [
+        72,
+        56,
+        780,
+        28
+      ],
+      "geometry": "rect",
+      "text": "CAPCUT GUIDE",
+      "textPreview": "CAPCUT GUIDE",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "CAPCUT GUIDE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "CAPCUT GUIDE",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "CAPCUT GUIDE",
+              "fontSize": 18,
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/47i54vux",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        72,
+        112,
+        960,
+        92
+      ],
+      "geometry": "rect",
+      "text": "이 순서대로 붙이면 2분 시연 영상이 됩니다",
+      "textPreview": "이 순서대로 붙이면 2분 시연 영상이 됩니다",
+      "resolvedFontSize": 46,
+      "resolvedTextStyle": {
+        "fontSize": 46,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "이 순서대로 붙이면 2분 시연 영상이 됩니다"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "이 순서대로 붙이면 2분 시연 영상이 됩니다",
+          "resolvedTextStyle": {
+            "fontSize": 46,
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "이 순서대로 붙이면 2분 시연 영상이 됩니다",
+              "fontSize": 46,
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5sr6x0vi",
+      "id": "3",
+      "name": "subtitle",
+      "bbox": [
+        72,
+        214,
+        1000,
+        76
+      ],
+      "geometry": "rect",
+      "text": "마지막 슬라이드는 제출 영상에 넣지 않아도 되는 편집용 체크리스트입니다.",
+      "textPreview": "마지막 슬라이드는 제출 영상에 넣지 않아도 되는 편집용 체크리스트입니다.",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#343A46",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "마지막 슬라이드는 제출 영상에 넣지 않아도 되는 편집용 체크리스트입니다."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "마지막 슬라이드는 제출 영상에 넣지 않아도 되는 편집용 체크리스트입니다.",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#343A46",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "마지막 슬라이드는 제출 영상에 넣지 않아도 되는 편집용 체크리스트입니다.",
+              "fontSize": 25,
+              "color": "#343A46",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qt0n65c3",
+      "id": "4",
+      "name": "rule",
+      "bbox": [
+        72,
+        314,
+        1136,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#B8BCC4",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ru9ozado",
+      "id": "5",
+      "name": "check-0",
+      "bbox": [
+        112,
+        342,
+        900,
+        32
+      ],
+      "geometry": "rect",
+      "text": "1. 제목 화면 5초",
+      "textPreview": "1. 제목 화면 5초",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. 제목 화면 5초"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. 제목 화면 5초",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. 제목 화면 5초",
+              "fontSize": 24,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/svi58vu9",
+      "id": "6",
+      "name": "check-1",
+      "bbox": [
+        112,
+        384,
+        900,
+        32
+      ],
+      "geometry": "rect",
+      "text": "2. 구조도 10초",
+      "textPreview": "2. 구조도 10초",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2. 구조도 10초"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2. 구조도 10초",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. 구조도 10초",
+              "fontSize": 24,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dwb610vu",
+      "id": "7",
+      "name": "check-2",
+      "bbox": [
+        112,
+        426,
+        900,
+        32
+      ],
+      "geometry": "rect",
+      "text": "3. search.py 실제 실행 화면 25초",
+      "textPreview": "3. search.py 실제 실행 화면 25초",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3. search.py 실제 실행 화면 25초"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3. search.py 실제 실행 화면 25초",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. search.py 실제 실행 화면 25초",
+              "fontSize": 24,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/exkna5cz",
+      "id": "8",
+      "name": "check-3",
+      "bbox": [
+        112,
+        468,
+        900,
+        32
+      ],
+      "geometry": "rect",
+      "text": "4. ask.py 답변 + sources 화면 35초",
+      "textPreview": "4. ask.py 답변 + sources 화면 35초",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "4. ask.py 답변 + sources 화면 35초"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "4. ask.py 답변 + sources 화면 35초",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "4. ask.py 답변 + sources 화면 35초",
+              "fontSize": 24,
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fyto3adk",
+      "id": "9",
+      "name": "check-4",
+      "bbox": [
+        112,
+        510,
+        900,
+        32
+      ],
+      "geometry": "rect",
+      "text": "5. wiki/logs Markdown 저장 화면 15초",
+      "textPreview": "5. wiki/logs Markdown 저장 화면 15초",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "5. wiki/logs Markdown 저장 화면 15초"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "5. wiki/logs Markdown 저장 화면 15초",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5. wiki/logs Markdown 저장 화면 15초",
+              "fontSize": 24,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rm9oze5w",
+      "id": "10",
+      "name": "check-5",
+      "bbox": [
+        112,
+        552,
+        900,
+        32
+      ],
+      "geometry": "rect",
+      "text": "6. FastAPI /docs 화면 15초",
+      "textPreview": "6. FastAPI /docs 화면 15초",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "6. FastAPI /docs 화면 15초"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "6. FastAPI /docs 화면 15초",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "6. FastAPI /docs 화면 15초",
+              "fontSize": 24,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ql07694b",
+      "id": "11",
+      "name": "check-6",
+      "bbox": [
+        112,
+        594,
+        900,
+        32
+      ],
+      "geometry": "rect",
+      "text": "7. Jetson 또는 확장 카드 10초",
+      "textPreview": "7. Jetson 또는 확장 카드 10초",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "7. Jetson 또는 확장 카드 10초"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "7. Jetson 또는 확장 카드 10초",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "7. Jetson 또는 확장 카드 10초",
+              "fontSize": 24,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d8r614n2",
+      "id": "12",
+      "name": "footer",
+      "bbox": [
+        72,
+        666,
+        720,
+        28
+      ],
+      "geometry": "rect",
+      "text": "편집용 슬라이드",
+      "textPreview": "편집용 슬라이드",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#606672",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "편집용 슬라이드"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "편집용 슬라이드",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#606672",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "편집용 슬라이드",
+              "fontSize": 16,
+              "color": "#606672",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

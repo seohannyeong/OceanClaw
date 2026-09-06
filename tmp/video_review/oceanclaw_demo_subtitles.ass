@@ -1,0 +1,20 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Main,Malgun Gothic,42,&H00FFFFFF,&H000000FF,&H00111111,&H00000000,-1,0,0,0,100,100,0,0,1,2,0,2,70,70,58,1
+Style: Small,Malgun Gothic,34,&H00D7EBFF,&H000000FF,&H00111111,&H00000000,-1,0,0,0,100,100,0,0,1,2,0,2,70,70,58,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:05.20,0:00:11.80,Main,,0,0,0,,PDF 추출 결과와 chunk 파일 확인
+Dialogue: 0,0:00:11.80,0:00:17.80,Main,,0,0,0,,Manual · Sensor · Wiki FAISS index 확인
+Dialogue: 0,0:00:17.80,0:00:33.80,Main,,0,0,0,,Manual RAG 검색: 엔진 오일 점검
+Dialogue: 0,0:00:33.80,0:00:40.20,Main,,0,0,0,,관련 매뉴얼 페이지와 원문 근거 제공
+Dialogue: 0,0:00:40.20,0:00:46.50,Main,,0,0,0,,Sensor Event 검색: 고온 경고 이력 확인
+Dialogue: 0,0:00:46.50,0:00:52.80,Main,,0,0,0,,Obsidian Wiki 문서 검색
+Dialogue: 0,0:00:52.80,0:00:59.90,Main,,0,0,0,,질문과 답변을 Wiki logs에 자동 저장

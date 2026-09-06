@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 28px "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif; fill: #123047; }
+      .box-title { font: 700 22px "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif; fill: #12263a; }
+      .box-text { font: 400 15px "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif; fill: #405365; }
+      .sensor { fill: #e9f8f0; stroke: #2e9d65; stroke-width: 2.5; }
+      .edge { fill: #e8f3ff; stroke: #3b82c4; stroke-width: 2.5; }
+      .rag { fill: #f2edff; stroke: #7d62c9; stroke-width: 2.5; }
+      .out { fill: #fff2df; stroke: #e18b28; stroke-width: 2.5; }
+      .arrow { stroke: #335f7a; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#335f7a"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1000" height="360"/>
+  <text class="title" x="500" y="48" text-anchor="middle">향후 실제 선박 센서 연동 구조</text>
+
+  <rect class="sensor" x="55" y="115" width="190" height="120" rx="18"/>
+  <text class="box-title" x="150" y="158" text-anchor="middle">선박 센서</text>
+  <text class="box-text" x="150" y="190" text-anchor="middle">온도 · 압력</text>
+  <text class="box-text" x="150" y="215" text-anchor="middle">진동 · RPM</text>
+
+  <rect class="edge" x="300" y="115" width="190" height="120" rx="18"/>
+  <text class="box-title" x="395" y="158" text-anchor="middle">Jetson</text>
+  <text class="box-text" x="395" y="190" text-anchor="middle">센서값 수집</text>
+  <text class="box-text" x="395" y="215" text-anchor="middle">이벤트 변환</text>
+
+  <rect class="rag" x="545" y="115" width="190" height="120" rx="18"/>
+  <text class="box-title" x="640" y="158" text-anchor="middle">OceanClaw</text>
+  <text class="box-text" x="640" y="190" text-anchor="middle">RAG 검색</text>
+  <text class="box-text" x="640" y="215" text-anchor="middle">정비 답변 생성</text>
+
+  <rect class="out" x="790" y="115" width="190" height="120" rx="18"/>
+  <text class="box-title" x="885" y="158" text-anchor="middle">결과 제공</text>
+  <text class="box-text" x="885" y="190" text-anchor="middle">API · 채팅</text>
+  <text class="box-text" x="885" y="215" text-anchor="middle">Wiki 기록</text>
+
+  <path class="arrow" d="M245 175 L290 175"/>
+  <path class="arrow" d="M490 175 L535 175"/>
+  <path class="arrow" d="M735 175 L780 175"/>
+
+  <text class="box-text" x="500" y="300" text-anchor="middle">실제 센서 데이터를 Jetson에서 수집하고, OceanClaw가 매뉴얼·센서·Wiki 근거를 함께 검색하여 정비 판단을 지원</text>
+</svg>

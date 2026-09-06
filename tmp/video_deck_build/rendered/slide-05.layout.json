@@ -1,0 +1,667 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/z6loy2",
+    "id": "z6loy2",
+    "slide": 5,
+    "layoutId": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/87qlknmx",
+      "id": "1",
+      "name": "eyebrow",
+      "bbox": [
+        72,
+        56,
+        780,
+        28
+      ],
+      "geometry": "rect",
+      "text": "DEMO 3",
+      "textPreview": "DEMO 3",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "DEMO 3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "DEMO 3",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "DEMO 3",
+              "fontSize": 18,
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7mhkbilc",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        72,
+        112,
+        960,
+        92
+      ],
+      "geometry": "rect",
+      "text": "답변 결과를 Wiki logs에 저장합니다",
+      "textPreview": "답변 결과를 Wiki logs에 저장합니다",
+      "resolvedFontSize": 46,
+      "resolvedTextStyle": {
+        "fontSize": 46,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "답변 결과를 Wiki logs에 저장합니다"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "답변 결과를 Wiki logs에 저장합니다",
+          "resolvedTextStyle": {
+            "fontSize": 46,
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "답변 결과를 Wiki logs에 저장합니다",
+              "fontSize": 46,
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6l83id4r",
+      "id": "3",
+      "name": "subtitle",
+      "bbox": [
+        72,
+        214,
+        1000,
+        76
+      ],
+      "geometry": "rect",
+      "text": "질문, 답변, 출처를 Markdown 파일로 남겨 정비 지식을 축적합니다.",
+      "textPreview": "질문, 답변, 출처를 Markdown 파일로 남겨 정비 지식을 축적합니다.",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#343A46",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "질문, 답변, 출처를 Markdown 파일로 남겨 정비 지식을 축적합니다."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "질문, 답변, 출처를 Markdown 파일로 남겨 정비 지식을 축적합니다.",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#343A46",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "질문, 답변, 출처를 Markdown 파일로 남겨 정비 지식을 축적합니다.",
+              "fontSize": 25,
+              "color": "#343A46",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcjmhs3e",
+      "id": "4",
+      "name": "rule",
+      "bbox": [
+        72,
+        314,
+        1136,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#B8BCC4",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gbalonmt",
+      "id": "5",
+      "name": "wiki-panel",
+      "bbox": [
+        90,
+        350,
+        520,
+        176
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDEDED",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fa14fil8",
+      "id": "6",
+      "name": "wiki-tree",
+      "bbox": [
+        122,
+        382,
+        460,
+        96
+      ],
+      "geometry": "rect",
+      "text": "wiki/\n  logs/\n    2026-xx-xx_엔진_오일_점검.md",
+      "textPreview": "wiki/ |   logs/ |     2026-xx-xx_엔진_오일_점검.md",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "wiki/"
+          },
+          {
+            "index": 2,
+            "text": "  logs/"
+          },
+          {
+            "index": 3,
+            "text": "    2026-xx-xx_엔진_오일_점검.md"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "wiki/",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "wiki/",
+              "fontSize": 28,
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "  logs/",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "  logs/",
+              "fontSize": 28,
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "    2026-xx-xx_엔진_오일_점검.md",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "    2026-xx-xx_엔진_오일_점검.md",
+              "fontSize": 28,
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u9s3md4n",
+      "id": "7",
+      "name": "md-panel",
+      "bbox": [
+        650,
+        350,
+        540,
+        176
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pg3mls3q",
+      "id": "8",
+      "name": "md-body",
+      "bbox": [
+        682,
+        374,
+        476,
+        124
+      ],
+      "geometry": "rect",
+      "text": "# 질문\n엔진 오일 점검 방법 알려줘\n\n# 답변\n...\n\n# 출처\nmanual.pdf p.69",
+      "textPreview": "# 질문 | 엔진 오일 점검 방법 알려줘 |  | # 답변 | ... |  | # 출처 | manual.pdf p.69",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 8,
+        "lines": [
+          {
+            "index": 1,
+            "text": "# 질문"
+          },
+          {
+            "index": 2,
+            "text": "엔진 오일 점검 방법 알려줘"
+          },
+          {
+            "index": 3,
+            "text": ""
+          },
+          {
+            "index": 4,
+            "text": "# 답변"
+          },
+          {
+            "index": 5,
+            "text": "..."
+          },
+          {
+            "index": 6,
+            "text": ""
+          },
+          {
+            "index": 7,
+            "text": "# 출처"
+          },
+          {
+            "index": 8,
+            "text": "manual.pdf p.69"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "# 질문",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "# 질문",
+              "fontSize": 23,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "엔진 오일 점검 방법 알려줘",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "엔진 오일 점검 방법 알려줘",
+              "fontSize": 23,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "# 답변",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "# 답변",
+              "fontSize": 23,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "...",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "...",
+              "fontSize": 23,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 7,
+          "text": "# 출처",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "# 출처",
+              "fontSize": 23,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 8,
+          "text": "manual.pdf p.69",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "manual.pdf p.69",
+              "fontSize": 23,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fals7m5",
+      "id": "9",
+      "name": "footer",
+      "bbox": [
+        72,
+        666,
+        720,
+        28
+      ],
+      "geometry": "rect",
+      "text": "OceanClaw Demo Video",
+      "textPreview": "OceanClaw Demo Video",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#606672",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "OceanClaw Demo Video"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "OceanClaw Demo Video",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#606672",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "OceanClaw Demo Video",
+              "fontSize": 16,
+              "color": "#606672",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

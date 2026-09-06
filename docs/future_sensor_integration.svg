@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <style>
+      .bg { fill: #f7fafc; }
+      .title { font: 700 34px "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif; fill: #123047; }
+      .subtitle { font: 400 18px "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif; fill: #516375; }
+      .section { font: 700 18px "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif; fill: #17324d; }
+      .box-title { font: 700 20px "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif; fill: #12263a; }
+      .box-text { font: 400 15px "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif; fill: #405365; }
+      .small { font: 400 13px "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif; fill: #587083; }
+      .panel { fill: #ffffff; stroke: #c8d7e4; stroke-width: 2; rx: 18; }
+      .sensor { fill: #e9f8f0; stroke: #2e9d65; stroke-width: 2; }
+      .edge { fill: #e8f3ff; stroke: #3b82c4; stroke-width: 2; }
+      .data { fill: #fff2df; stroke: #e18b28; stroke-width: 2; }
+      .rag { fill: #f2edff; stroke: #7d62c9; stroke-width: 2; }
+      .output { fill: #f0f4f8; stroke: #7c8fa2; stroke-width: 2; }
+      .arrow { stroke: #335f7a; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .arrow-soft { stroke: #7a95aa; stroke-width: 2.4; fill: none; stroke-dasharray: 8 7; marker-end: url(#arrow-soft); }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#335f7a"/>
+    </marker>
+    <marker id="arrow-soft" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#7a95aa"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="900"/>
+  <text class="title" x="700" y="58" text-anchor="middle">향후 실제 선박 센서 연동 구조도</text>
+  <text class="subtitle" x="700" y="90" text-anchor="middle">Jetson Orin Nano 기반 센서 수집 · 이벤트 변환 · OceanClaw RAG 답변 생성 흐름</text>
+
+  <rect class="panel" x="60" y="125" width="1280" height="660"/>
+  <text class="section" x="95" y="162">실시간 센서 데이터 연동 흐름</text>
+
+  <!-- Sensors -->
+  <rect class="sensor" x="105" y="205" width="235" height="110" rx="14"/>
+  <text class="box-title" x="222.5" y="240" text-anchor="middle">선박 장비 센서</text>
+  <text class="box-text" x="222.5" y="270" text-anchor="middle">온도 · 압력 · 진동 · RPM</text>
+  <text class="small" x="222.5" y="294" text-anchor="middle">엔진 / 펌프 / 압축기 상태 측정</text>
+
+  <rect class="sensor" x="105" y="365" width="235" height="110" rx="14"/>
+  <text class="box-title" x="222.5" y="400" text-anchor="middle">통신 인터페이스</text>
+  <text class="box-text" x="222.5" y="430" text-anchor="middle">USB · Serial · GPIO · MQTT</text>
+  <text class="small" x="222.5" y="454" text-anchor="middle">센서값을 Jetson으로 전달</text>
+
+  <path class="arrow" d="M222.5 315 L222.5 355"/>
+
+  <!-- Jetson -->
+  <rect class="edge" x="430" y="285" width="270" height="130" rx="14"/>
+  <text class="box-title" x="565" y="323" text-anchor="middle">Jetson Orin Nano</text>
+  <text class="box-text" x="565" y="353" text-anchor="middle">Sensor Collector</text>
+  <text class="small" x="565" y="377" text-anchor="middle">주기적 수집 · 시간 기록 · 누락값 처리</text>
+  <text class="small" x="565" y="397" text-anchor="middle">로컬 엣지 장비에서 데이터 처리</text>
+
+  <path class="arrow" d="M340 420 C380 420 385 350 420 350"/>
+
+  <!-- Processing -->
+  <rect class="data" x="790" y="185" width="260" height="110" rx="14"/>
+  <text class="box-title" x="920" y="220" text-anchor="middle">전처리 / 정규화</text>
+  <text class="box-text" x="920" y="250" text-anchor="middle">단위 통일 · 이상치 확인</text>
+  <text class="small" x="920" y="274" text-anchor="middle">센서 row를 분석 가능한 형태로 변환</text>
+
+  <rect class="data" x="790" y="345" width="260" height="110" rx="14"/>
+  <text class="box-title" x="920" y="380" text-anchor="middle">Sensor Event 생성</text>
+  <text class="box-text" x="920" y="410" text-anchor="middle">warning / fault / watch</text>
+  <text class="small" x="920" y="434" text-anchor="middle">정비 이벤트 text로 변환</text>
+
+  <rect class="data" x="790" y="505" width="260" height="110" rx="14"/>
+  <text class="box-title" x="920" y="540" text-anchor="middle">저장 및 색인</text>
+  <text class="box-text" x="920" y="570" text-anchor="middle">sensor_events.csv / FAISS</text>
+  <text class="small" x="920" y="594" text-anchor="middle">Ollama embedding으로 검색 가능화</text>
+
+  <path class="arrow" d="M700 350 C735 350 745 240 780 240"/>
+  <path class="arrow" d="M920 295 L920 335"/>
+  <path class="arrow" d="M920 455 L920 495"/>
+
+  <!-- RAG -->
+  <rect class="rag" x="1135" y="245" width="150" height="90" rx="14"/>
+  <text class="box-title" x="1210" y="278" text-anchor="middle">RAG 검색</text>
+  <text class="small" x="1210" y="304" text-anchor="middle">Manual</text>
+  <text class="small" x="1210" y="322" text-anchor="middle">Sensor · Wiki</text>
+
+  <rect class="rag" x="1135" y="405" width="150" height="90" rx="14"/>
+  <text class="box-title" x="1210" y="438" text-anchor="middle">Ollama LLM</text>
+  <text class="small" x="1210" y="464" text-anchor="middle">근거 기반</text>
+  <text class="small" x="1210" y="482" text-anchor="middle">정비 답변</text>
+
+  <path class="arrow" d="M1050 560 C1110 560 1085 290 1125 290"/>
+  <path class="arrow" d="M1210 335 L1210 395"/>
+
+  <!-- Outputs -->
+  <rect class="output" x="210" y="655" width="240" height="90" rx="14"/>
+  <text class="box-title" x="330" y="688" text-anchor="middle">FastAPI / Web UI</text>
+  <text class="box-text" x="330" y="718" text-anchor="middle">센서 상태 및 답변 조회</text>
+
+  <rect class="output" x="580" y="655" width="240" height="90" rx="14"/>
+  <text class="box-title" x="700" y="688" text-anchor="middle">Mattermost</text>
+  <text class="box-text" x="700" y="718" text-anchor="middle">채팅 기반 정비 질문</text>
+
+  <rect class="output" x="950" y="655" width="240" height="90" rx="14"/>
+  <text class="box-title" x="1070" y="688" text-anchor="middle">Obsidian Wiki</text>
+  <text class="box-text" x="1070" y="718" text-anchor="middle">질문/답변/출처 자동 기록</text>
+
+  <path class="arrow-soft" d="M1210 495 C1210 625 330 615 330 645"/>
+  <path class="arrow-soft" d="M1210 495 C1210 625 700 615 700 645"/>
+  <path class="arrow-soft" d="M1210 495 C1210 625 1070 615 1070 645"/>
+
+  <text class="small" x="700" y="835" text-anchor="middle">향후 확장 목표: 실제 센서 데이터를 Jetson에서 수집하고, OceanClaw가 이상 이벤트와 매뉴얼 근거를 함께 검색하여 정비 판단을 지원</text>
+</svg>

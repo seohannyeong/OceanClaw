@@ -1,0 +1,415 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/l648bb",
+    "id": "l648bb",
+    "slide": 7,
+    "layoutId": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kb6lwzmd",
+      "id": "1",
+      "name": "eyebrow",
+      "bbox": [
+        72,
+        56,
+        780,
+        28
+      ],
+      "geometry": "rect",
+      "text": "EDGE AI",
+      "textPreview": "EDGE AI",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "EDGE AI"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "EDGE AI",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "EDGE AI",
+              "fontSize": 18,
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jax4nuls",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        72,
+        112,
+        960,
+        92
+      ],
+      "geometry": "rect",
+      "text": "Jetson 기반 로컬 정비 AI로 확장합니다",
+      "textPreview": "Jetson 기반 로컬 정비 AI로 확장합니다",
+      "resolvedFontSize": 46,
+      "resolvedTextStyle": {
+        "fontSize": 46,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Jetson 기반 로컬 정비 AI로 확장합니다"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Jetson 기반 로컬 정비 AI로 확장합니다",
+          "resolvedTextStyle": {
+            "fontSize": 46,
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Jetson 기반 로컬 정비 AI로 확장합니다",
+              "fontSize": 46,
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y9o3up47",
+      "id": "3",
+      "name": "subtitle",
+      "bbox": [
+        72,
+        214,
+        1000,
+        76
+      ],
+      "geometry": "rect",
+      "text": "인터넷 의존도를 낮추고 선박 내부망 또는 실습 환경에서 운용할 수 있는 구조입니다.",
+      "textPreview": "인터넷 의존도를 낮추고 선박 내부망 또는 실습 환경에서 운용할 수 있는 구조입니다.",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#343A46",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "인터넷 의존도를 낮추고 선박 내부망 또는 실습 환경에서 운용할 수 있는 구조입니다."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "인터넷 의존도를 낮추고 선박 내부망 또는 실습 환경에서 운용할 수 있는 구조입니다.",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#343A46",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "인터넷 의존도를 낮추고 선박 내부망 또는 실습 환경에서 운용할 수 있는 구조입니다.",
+              "fontSize": 25,
+              "color": "#343A46",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgzmt43u",
+      "id": "4",
+      "name": "rule",
+      "bbox": [
+        72,
+        314,
+        1136,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#B8BCC4",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/p8n2h4ra",
+      "id": "5",
+      "bbox": [
+        118,
+        348,
+        1044,
+        182
+      ],
+      "alt": "Future sensor integration",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "dcb4f111-ea6d-419d-af98-2bd8453ba257",
+        "contentType": "image/png",
+        "byteLength": 28255
+      }
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ex4rulo",
+      "id": "6",
+      "name": "bottom",
+      "bbox": [
+        92,
+        566,
+        1100,
+        42
+      ],
+      "geometry": "rect",
+      "text": "향후 실제 온도·압력·진동 센서와 공공데이터 API 연계를 통해 예방정비 기능으로 확장할 수 있습니다.",
+      "textPreview": "향후 실제 온도·압력·진동 센서와 공공데이터 API 연계를 통해 예방정비 기능으로 확장할 수 있습니다.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "향후 실제 온도·압력·진동 센서와 공공데이터 API 연계를 통해 예방정비 기능으로 확장할 수 있습니다."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "향후 실제 온도·압력·진동 센서와 공공데이터 API 연계를 통해 예방정비 기능으로 확장할 수 있습니다.",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#000000",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "향후 실제 온도·압력·진동 센서와 공공데이터 API 연계를 통해 예방정비 기능으로 확장할 수 있습니다.",
+              "fontSize": 24,
+              "color": "#000000",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6do3yp43",
+      "id": "7",
+      "name": "footer",
+      "bbox": [
+        72,
+        666,
+        720,
+        28
+      ],
+      "geometry": "rect",
+      "text": "OceanClaw Demo Video",
+      "textPreview": "OceanClaw Demo Video",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#606672",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "OceanClaw Demo Video"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "OceanClaw Demo Video",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#606672",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "OceanClaw Demo Video",
+              "fontSize": 16,
+              "color": "#606672",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

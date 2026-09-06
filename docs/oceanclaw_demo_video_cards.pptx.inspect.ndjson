@@ -1,0 +1,99 @@
+{"kind":"deck","id":"pr/t2nspg","name":"Deck"}
+{"kind":"layout","layoutId":"b5458ff6-44b6-4963-9bb4-291b3b1d79e8","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"4f7c0fed-c302-4e31-8473-f0c4b6c76429","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/1hro1b","slide":1,"title":"OceanClaw","textShapes":5}
+{"kind":"textbox","id":"sh/l0r61g3u","slide":1,"name":"project-name","text":"OceanClaw","textPreview":"OceanClaw","textChars":9,"textLines":1,"bbox":[72,150,920,110]}
+{"kind":"textbox","id":"sh/yxgn614j","slide":1,"name":"tagline","text":"RAG 기반 선박 정비 AI Agent","textPreview":"RAG 기반 선박 정비 AI Agent","textChars":21,"textLines":1,"bbox":[78,278,980,46]}
+{"kind":"textbox","id":"sh/jy9oz6l4","slide":1,"name":"scope","text":"PDF Manual · Sensor Event · Wiki · Local LLM · FastAPI","textPreview":"PDF Manual · Sensor Event · Wiki · Local LLM · FastAPI","textChars":54,"textLines":1,"bbox":[80,368,980,42]}
+{"kind":"shape","id":"sh/wby54rmd","slide":1,"name":"rule","bbox":[80,456,780,2]}
+{"kind":"textbox","id":"sh/xw76xw3y","slide":1,"name":"caption","text":"선박 정비 자료를 검색하고, 근거가 있는 답변을 제공합니다.","textPreview":"선박 정비 자료를 검색하고, 근거가 있는 답변을 제공합니다.","textChars":33,"textLines":1,"bbox":[80,496,900,46]}
+{"kind":"textbox","id":"sh/a9gn2h47","slide":1,"name":"footer","text":"2분 시연 영상","textPreview":"2분 시연 영상","textChars":8,"textLines":1,"bbox":[72,666,720,28]}
+{"kind":"notes","id":"nt/1hro1b","slide":1,"text":"[Sources]\n- Project content: OceanClaw local workspace.\n\n[Video]\n0:00~0:05 제목 화면으로 사용."}
+{"kind":"slide","id":"sl/f90wzk","slide":2,"title":"SYSTEM FLOW","textShapes":4}
+{"kind":"textbox","id":"sh/fehwf6pw","slide":2,"name":"eyebrow","text":"SYSTEM FLOW","textPreview":"SYSTEM FLOW","textChars":11,"textLines":1,"bbox":[72,56,780,28]}
+{"kind":"textbox","id":"sh/gfqd8b6h","slide":2,"name":"title","text":"검색 근거 기반으로 답변을 생성합니다","textPreview":"검색 근거 기반으로 답변을 생성합니다","textChars":20,"textLines":1,"bbox":[72,112,960,92]}
+{"kind":"textbox","id":"sh/1gzehw7m","slide":2,"name":"subtitle","text":"PDF, 센서 CSV, Wiki 문서를 먼저 검색하고 그 결과를 LLM context로 사용합니다.","textPreview":"PDF, 센서 CSV, Wiki 문서를 먼저 검색하고 그 결과를 LLM context로 사용합니다.","textChars":55,"textLines":1,"bbox":[72,214,1000,76]}
+{"kind":"shape","id":"sh/69ov2hoz","slide":2,"name":"rule","bbox":[72,314,1136,2]}
+{"kind":"textbox","id":"sh/sb6d4r65","slide":2,"name":"footer","text":"OceanClaw Demo Video","textPreview":"OceanClaw Demo Video","textChars":20,"textLines":1,"bbox":[72,666,720,28]}
+{"kind":"image","id":"im/6p8fylsr","slide":2,"name":"","alt":"OceanClaw system architecture","bbox":[125,342,1030,280]}
+{"kind":"notes","id":"nt/f90wzk","slide":2,"text":"[Sources]\n- Architecture image: docs/oceanclaw_architecture.png in OceanClaw workspace.\n\n[Video]\n0:05~0:15 구조 설명 카드."}
+{"kind":"slide","id":"sl/idfqzq","slide":3,"title":"DEMO 1","textShapes":6}
+{"kind":"textbox","id":"sh/pwvq1c3y","slide":3,"name":"eyebrow","text":"DEMO 1","textPreview":"DEMO 1","textChars":6,"textLines":1,"bbox":[72,56,780,28]}
+{"kind":"textbox","id":"sh/2t476h4n","slide":3,"name":"title","text":"매뉴얼에서 관련 페이지를 검색합니다","textPreview":"매뉴얼에서 관련 페이지를 검색합니다","textChars":19,"textLines":1,"bbox":[72,112,960,92]}
+{"kind":"textbox","id":"sh/3ud8z2l8","slide":3,"name":"subtitle","text":"질문을 embedding하고 FAISS index에서 유사한 manual chunk를 찾습니다.","textPreview":"질문을 embedding하고 FAISS index에서 유사한 manual chunk를 찾습니다.","textChars":53,"textLines":1,"bbox":[72,214,1000,76]}
+{"kind":"shape","id":"sh/cz69crmp","slide":3,"name":"rule","bbox":[72,314,1136,2]}
+{"kind":"shape","id":"sh/xkfq5w3a","slide":3,"name":"command-box","bbox":[90,360,1100,92]}
+{"kind":"textbox","id":"sh/qxorah4j","slide":3,"name":"command","text":"python scripts\\search.py \"engine oil level check dipstick MIN MAX\" --top-k 3","textPreview":"python scripts\\search.py \"engine oil level check dipstick MIN MAX\" --top-k 3","textChars":76,"textLines":1,"bbox":[122,388,1040,40]}
+{"kind":"textbox","id":"sh/byx83ml4","slide":3,"name":"result-key","text":"확인 포인트: page=69 · Check Oil Level in Engine · dipstick · MIN/MAX","textPreview":"확인 포인트: page=69 · Check Oil Level in Engine · dipstick · MIN/MAX","textChars":64,"textLines":1,"bbox":[96,492,1080,44]}
+{"kind":"textbox","id":"sh/s32p0nml","slide":3,"name":"footer","text":"OceanClaw Demo Video","textPreview":"OceanClaw Demo Video","textChars":20,"textLines":1,"bbox":[72,666,720,28]}
+{"kind":"notes","id":"nt/idfqzq","slide":3,"text":"[Sources]\n- Command based on OceanClaw scripts/search.py.\n\n[Video]\n0:15~0:45 이 카드 뒤에 실제 터미널 검색 화면을 붙이기."}
+{"kind":"slide","id":"sl/kjv1ni","slide":4,"title":"DEMO 2","textShapes":6}
+{"kind":"textbox","id":"sh/xgnmd83i","slide":4,"name":"eyebrow","text":"DEMO 2","textPreview":"DEMO 2","textChars":6,"textLines":1,"bbox":[72,56,780,28]}
+{"kind":"textbox","id":"sh/adcnid47","slide":4,"name":"title","text":"검색된 근거로 한국어 답변을 생성합니다","textPreview":"검색된 근거로 한국어 답변을 생성합니다","textChars":21,"textLines":1,"bbox":[72,112,960,92]}
+{"kind":"textbox","id":"sh/be54byls","slide":4,"name":"subtitle","text":"Ollama LLM은 검색 결과 context를 바탕으로 정비 절차와 출처를 함께 제공합니다.","textPreview":"Ollama LLM은 검색 결과 context를 바탕으로 정비 절차와 출처를 함께 제공합니다.","textChars":52,"textLines":1,"bbox":[72,214,1000,76]}
+{"kind":"shape","id":"sh/kje5on29","slide":4,"name":"rule","bbox":[72,314,1136,2]}
+{"kind":"shape","id":"sh/lkn6hs3u","slide":4,"name":"answer-box","bbox":[90,344,1100,154]}
+{"kind":"textbox","id":"sh/yhwnmd43","slide":4,"name":"answer-sample","text":"질문: 엔진 오일 점검 방법 알려줘\n답변: 엔진 정지 및 저온 상태에서 dipstick으로 MIN/MAX 범위를 확인합니다.\n출처: yanmar_6lf_operation_manual.pdf p.69","textPreview":"질문: 엔진 오일 점검 방법 알려줘 | 답변: 엔진 정지 및 저온 상태에서 dipstick으로 MIN/MAX 범위를 확인합니다. | 출처: yanmar_6lf_operation_manual.pdf p.69","textChars":110,"textLines":3,"bbox":[122,370,1036,102]}
+{"kind":"textbox","id":"sh/zi54filo","slide":4,"name":"caption","text":"핵심 장면은 답변과 출처 페이지가 함께 보이는 화면입니다.","textPreview":"핵심 장면은 답변과 출처 페이지가 함께 보이는 화면입니다.","textChars":32,"textLines":1,"bbox":[96,528,1080,42]}
+{"kind":"textbox","id":"sh/0nu5cjm5","slide":4,"name":"footer","text":"OceanClaw Demo Video","textPreview":"OceanClaw Demo Video","textChars":20,"textLines":1,"bbox":[72,666,720,28]}
+{"kind":"notes","id":"nt/kjv1ni","slide":4,"text":"[Sources]\n- Example answer/source derived from OceanClaw RAG test result.\n\n[Video]\n0:45~1:15 ask.py 실행 화면 또는 API 응답 화면을 붙이기."}
+{"kind":"slide","id":"sl/z6loy2","slide":5,"title":"DEMO 3","textShapes":6}
+{"kind":"textbox","id":"sh/87qlknmx","slide":5,"name":"eyebrow","text":"DEMO 3","textPreview":"DEMO 3","textChars":6,"textLines":1,"bbox":[72,56,780,28]}
+{"kind":"textbox","id":"sh/7mhkbilc","slide":5,"name":"title","text":"답변 결과를 Wiki logs에 저장합니다","textPreview":"답변 결과를 Wiki logs에 저장합니다","textChars":23,"textLines":1,"bbox":[72,112,960,92]}
+{"kind":"textbox","id":"sh/6l83id4r","slide":5,"name":"subtitle","text":"질문, 답변, 출처를 Markdown 파일로 남겨 정비 지식을 축적합니다.","textPreview":"질문, 답변, 출처를 Markdown 파일로 남겨 정비 지식을 축적합니다.","textChars":41,"textLines":1,"bbox":[72,214,1000,76]}
+{"kind":"shape","id":"sh/hcjmhs3e","slide":5,"name":"rule","bbox":[72,314,1136,2]}
+{"kind":"shape","id":"sh/gbalonmt","slide":5,"name":"wiki-panel","bbox":[90,350,520,176]}
+{"kind":"textbox","id":"sh/fa14fil8","slide":5,"name":"wiki-tree","text":"wiki/\n  logs/\n    2026-xx-xx_엔진_오일_점검.md","textPreview":"wiki/ |   logs/ |     2026-xx-xx_엔진_오일_점검.md","textChars":40,"textLines":3,"bbox":[122,382,460,96]}
+{"kind":"shape","id":"sh/u9s3md4n","slide":5,"name":"md-panel","bbox":[650,350,540,176]}
+{"kind":"textbox","id":"sh/pg3mls3q","slide":5,"name":"md-body","text":"# 질문\n엔진 오일 점검 방법 알려줘\n\n# 답변\n...\n\n# 출처\nmanual.pdf p.69","textPreview":"# 질문 | 엔진 오일 점검 방법 알려줘 |  | # 답변 | ... |  | # 출처 | manual.pdf p.69","textChars":52,"textLines":8,"bbox":[682,374,476,124]}
+{"kind":"textbox","id":"sh/4fals7m5","slide":5,"name":"footer","text":"OceanClaw Demo Video","textPreview":"OceanClaw Demo Video","textChars":20,"textLines":1,"bbox":[72,666,720,28]}
+{"kind":"notes","id":"nt/z6loy2","slide":5,"text":"[Sources]\n- Wiki behavior based on OceanClaw wiki_log.py and wiki/logs structure.\n\n[Video]\n1:15~1:30 wiki/logs 폴더와 생성된 Markdown 파일을 보여주기."}
+{"kind":"slide","id":"sl/lgyeua","slide":6,"title":"SERVICE","textShapes":10}
+{"kind":"textbox","id":"sh/9gjatobe","slide":6,"name":"eyebrow","text":"SERVICE","textPreview":"SERVICE","textChars":7,"textLines":1,"bbox":[72,56,780,28]}
+{"kind":"textbox","id":"sh/mdsri9cn","slide":6,"name":"title","text":"FastAPI 서버로 기능을 제공합니다","textPreview":"FastAPI 서버로 기능을 제공합니다","textChars":21,"textLines":1,"bbox":[72,112,960,92]}
+{"kind":"textbox","id":"sh/7e18ret8","slide":6,"name":"subtitle","text":"CLI뿐 아니라 API endpoint로 검색과 답변 기능을 사용할 수 있습니다.","textPreview":"CLI뿐 아니라 API endpoint로 검색과 답변 기능을 사용할 수 있습니다.","textChars":45,"textLines":1,"bbox":[72,214,1000,76]}
+{"kind":"shape","id":"sh/w3a9o3up","slide":6,"name":"rule","bbox":[72,314,1136,2]}
+{"kind":"shape","id":"sh/h4jaxoba","slide":6,"name":"ep-0","bbox":[130,350,470,52]}
+{"kind":"textbox","id":"sh/uhsrmtcj","slide":6,"name":"ep-text-0","text":"/health","textPreview":"/health","textChars":7,"textLines":1,"bbox":[154,362,420,26]}
+{"kind":"shape","id":"sh/vi1svyt4","slide":6,"name":"ep-1","bbox":[680,350,470,52]}
+{"kind":"textbox","id":"sh/cnq9czul","slide":6,"name":"ep-text-1","text":"/ask","textPreview":"/ask","textChars":4,"textLines":1,"bbox":[704,362,420,26]}
+{"kind":"shape","id":"sh/d8zql4v6","slide":6,"name":"ep-2","bbox":[130,424,470,52]}
+{"kind":"textbox","id":"sh/xcjqhc7m","slide":6,"name":"ep-text-2","text":"/search/manual","textPreview":"/search/manual","textChars":14,"textLines":1,"bbox":[154,436,420,26]}
+{"kind":"shape","id":"sh/wba9o761","slide":6,"name":"ep-3","bbox":[680,424,470,52]}
+{"kind":"textbox","id":"sh/bah8fmpg","slide":6,"name":"ep-text-3","text":"/search/sensor","textPreview":"/search/sensor","textChars":14,"textLines":1,"bbox":[704,436,420,26]}
+{"kind":"shape","id":"sh/a98rmhob","slide":6,"name":"ep-4","bbox":[130,498,470,52]}
+{"kind":"textbox","id":"sh/lgjalwny","slide":6,"name":"ep-text-4","text":"/search/wiki","textPreview":"/search/wiki","textChars":12,"textLines":1,"bbox":[154,510,420,26]}
+{"kind":"shape","id":"sh/kfa9sr6d","slide":6,"name":"ep-5","bbox":[680,498,470,52]}
+{"kind":"textbox","id":"sh/je1sjmps","slide":6,"name":"ep-text-5","text":"/mattermost/slash","textPreview":"/mattermost/slash","textChars":17,"textLines":1,"bbox":[704,510,420,26]}
+{"kind":"textbox","id":"sh/ydsrqho7","slide":6,"name":"footer","text":"OceanClaw Demo Video","textPreview":"OceanClaw Demo Video","textChars":20,"textLines":1,"bbox":[72,666,720,28]}
+{"kind":"notes","id":"nt/lgyeua","slide":6,"text":"[Sources]\n- Endpoint list based on OceanClaw FastAPI implementation.\n\n[Video]\n1:30~1:45 브라우저에서 http://127.0.0.1:8000/docs 화면을 보여주기."}
+{"kind":"slide","id":"sl/l648bb","slide":7,"title":"EDGE AI","textShapes":5}
+{"kind":"textbox","id":"sh/kb6lwzmd","slide":7,"name":"eyebrow","text":"EDGE AI","textPreview":"EDGE AI","textChars":7,"textLines":1,"bbox":[72,56,780,28]}
+{"kind":"textbox","id":"sh/jax4nuls","slide":7,"name":"title","text":"Jetson 기반 로컬 정비 AI로 확장합니다","textPreview":"Jetson 기반 로컬 정비 AI로 확장합니다","textChars":25,"textLines":1,"bbox":[72,112,960,92]}
+{"kind":"textbox","id":"sh/y9o3up47","slide":7,"name":"subtitle","text":"인터넷 의존도를 낮추고 선박 내부망 또는 실습 환경에서 운용할 수 있는 구조입니다.","textPreview":"인터넷 의존도를 낮추고 선박 내부망 또는 실습 환경에서 운용할 수 있는 구조입니다.","textChars":46,"textLines":1,"bbox":[72,214,1000,76]}
+{"kind":"shape","id":"sh/tgzmt43u","slide":7,"name":"rule","bbox":[72,314,1136,2]}
+{"kind":"textbox","id":"sh/7ex4rulo","slide":7,"name":"bottom","text":"향후 실제 온도·압력·진동 센서와 공공데이터 API 연계를 통해 예방정비 기능으로 확장할 수 있습니다.","textPreview":"향후 실제 온도·압력·진동 센서와 공공데이터 API 연계를 통해 예방정비 기능으로 확장할 수 있습니다.","textChars":57,"textLines":1,"bbox":[92,566,1100,42]}
+{"kind":"textbox","id":"sh/6do3yp43","slide":7,"name":"footer","text":"OceanClaw Demo Video","textPreview":"OceanClaw Demo Video","textChars":20,"textLines":1,"bbox":[72,666,720,28]}
+{"kind":"image","id":"im/p8n2h4ra","slide":7,"name":"","alt":"Future sensor integration","bbox":[118,348,1044,182]}
+{"kind":"notes","id":"nt/l648bb","slide":7,"text":"[Sources]\n- Sensor integration image: docs/future_sensor_integration_compact.png in OceanClaw workspace.\n\n[Video]\n1:45~1:55 Jetson 또는 향후 센서 연동 설명 카드."}
+{"kind":"slide","id":"sl/0svl58","slide":8,"title":"OceanClaw","textShapes":4}
+{"kind":"textbox","id":"sh/432t036d","slide":8,"name":"closing-title","text":"OceanClaw","textPreview":"OceanClaw","textChars":9,"textLines":1,"bbox":[72,174,900,96]}
+{"kind":"textbox","id":"sh/32tc7yps","slide":8,"name":"closing-message","text":"검색 가능한 정비 자료와 로컬 LLM을 연결해\n근거가 남는 선박 정비 AI Agent를 구현했습니다.","textPreview":"검색 가능한 정비 자료와 로컬 LLM을 연결해 | 근거가 남는 선박 정비 AI Agent를 구현했습니다.","textChars":56,"textLines":2,"bbox":[76,300,1040,104]}
+{"kind":"shape","id":"sh/i1kbyto7","slide":8,"name":"rule","bbox":[80,456,760,2]}
+{"kind":"textbox","id":"sh/dsvud8nu","slide":8,"name":"closing-small","text":"Manual RAG · Sensor Search · Wiki Logs · FastAPI · Jetson Ready","textPreview":"Manual RAG · Sensor Search · Wiki Logs · FastAPI · Jetson Ready","textChars":63,"textLines":1,"bbox":[80,498,1000,38]}
+{"kind":"textbox","id":"sh/crmt436p","slide":8,"name":"footer","text":"Demo complete","textPreview":"Demo complete","textChars":13,"textLines":1,"bbox":[72,666,720,28]}
+{"kind":"notes","id":"nt/0svl58","slide":8,"text":"[Sources]\n- Project feature summary: OceanClaw local workspace.\n\n[Video]\n1:55~2:00 마무리 화면."}
+{"kind":"slide","id":"sl/1s588j","slide":9,"title":"CAPCUT GUIDE","textShapes":11}
+{"kind":"textbox","id":"sh/3694vqdc","slide":9,"name":"eyebrow","text":"CAPCUT GUIDE","textPreview":"CAPCUT GUIDE","textChars":12,"textLines":1,"bbox":[72,56,780,28]}
+{"kind":"textbox","id":"sh/47i54vux","slide":9,"name":"title","text":"이 순서대로 붙이면 2분 시연 영상이 됩니다","textPreview":"이 순서대로 붙이면 2분 시연 영상이 됩니다","textChars":24,"textLines":1,"bbox":[72,112,960,92]}
+{"kind":"textbox","id":"sh/5sr6x0vi","slide":9,"name":"subtitle","text":"마지막 슬라이드는 제출 영상에 넣지 않아도 되는 편집용 체크리스트입니다.","textPreview":"마지막 슬라이드는 제출 영상에 넣지 않아도 되는 편집용 체크리스트입니다.","textChars":40,"textLines":1,"bbox":[72,214,1000,76]}
+{"kind":"shape","id":"sh/qt0n65c3","slide":9,"name":"rule","bbox":[72,314,1136,2]}
+{"kind":"textbox","id":"sh/ru9ozado","slide":9,"name":"check-0","text":"1. 제목 화면 5초","textPreview":"1. 제목 화면 5초","textChars":11,"textLines":1,"bbox":[112,342,900,32]}
+{"kind":"textbox","id":"sh/svi58vu9","slide":9,"name":"check-1","text":"2. 구조도 10초","textPreview":"2. 구조도 10초","textChars":10,"textLines":1,"bbox":[112,384,900,32]}
+{"kind":"textbox","id":"sh/dwb610vu","slide":9,"name":"check-2","text":"3. search.py 실제 실행 화면 25초","textPreview":"3. search.py 실제 실행 화면 25초","textChars":25,"textLines":1,"bbox":[112,426,900,32]}
+{"kind":"textbox","id":"sh/exkna5cz","slide":9,"name":"check-3","text":"4. ask.py 답변 + sources 화면 35초","textPreview":"4. ask.py 답변 + sources 화면 35초","textChars":29,"textLines":1,"bbox":[112,468,900,32]}
+{"kind":"textbox","id":"sh/fyto3adk","slide":9,"name":"check-4","text":"5. wiki/logs Markdown 저장 화면 15초","textPreview":"5. wiki/logs Markdown 저장 화면 15초","textChars":31,"textLines":1,"bbox":[112,510,900,32]}
+{"kind":"textbox","id":"sh/rm9oze5w","slide":9,"name":"check-5","text":"6. FastAPI /docs 화면 15초","textPreview":"6. FastAPI /docs 화면 15초","textChars":23,"textLines":1,"bbox":[112,552,900,32]}
+{"kind":"textbox","id":"sh/ql07694b","slide":9,"name":"check-6","text":"7. Jetson 또는 확장 카드 10초","textPreview":"7. Jetson 또는 확장 카드 10초","textChars":22,"textLines":1,"bbox":[112,594,900,32]}
+{"kind":"textbox","id":"sh/d8r614n2","slide":9,"name":"footer","text":"편집용 슬라이드","textPreview":"편집용 슬라이드","textChars":8,"textLines":1,"bbox":[72,666,720,28]}
+{"kind":"notes","id":"nt/1s588j","slide":9,"text":"[Sources]\n- Video sequence based on requested 2-minute demo format.\n\n[Video]\n이 슬라이드는 편집 참고용이며 제출 영상에서는 제외 가능."}

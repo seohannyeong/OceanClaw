@@ -1,0 +1,354 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/f90wzk",
+    "id": "f90wzk",
+    "slide": 2,
+    "layoutId": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "4f7c0fed-c302-4e31-8473-f0c4b6c76429",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "b5458ff6-44b6-4963-9bb4-291b3b1d79e8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fehwf6pw",
+      "id": "1",
+      "name": "eyebrow",
+      "bbox": [
+        72,
+        56,
+        780,
+        28
+      ],
+      "geometry": "rect",
+      "text": "SYSTEM FLOW",
+      "textPreview": "SYSTEM FLOW",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "SYSTEM FLOW"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "SYSTEM FLOW",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "SYSTEM FLOW",
+              "fontSize": 18,
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfqd8b6h",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        72,
+        112,
+        960,
+        92
+      ],
+      "geometry": "rect",
+      "text": "검색 근거 기반으로 답변을 생성합니다",
+      "textPreview": "검색 근거 기반으로 답변을 생성합니다",
+      "resolvedFontSize": 46,
+      "resolvedTextStyle": {
+        "fontSize": 46,
+        "typeface": "+mn-lt",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "검색 근거 기반으로 답변을 생성합니다"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "검색 근거 기반으로 답변을 생성합니다",
+          "resolvedTextStyle": {
+            "fontSize": 46,
+            "color": "#000000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "검색 근거 기반으로 답변을 생성합니다",
+              "fontSize": 46,
+              "color": "#000000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1gzehw7m",
+      "id": "3",
+      "name": "subtitle",
+      "bbox": [
+        72,
+        214,
+        1000,
+        76
+      ],
+      "geometry": "rect",
+      "text": "PDF, 센서 CSV, Wiki 문서를 먼저 검색하고 그 결과를 LLM context로 사용합니다.",
+      "textPreview": "PDF, 센서 CSV, Wiki 문서를 먼저 검색하고 그 결과를 LLM context로 사용합니다.",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#343A46",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PDF, 센서 CSV, Wiki 문서를 먼저 검색하고 그 결과를 LLM context로 사용합니다."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PDF, 센서 CSV, Wiki 문서를 먼저 검색하고 그 결과를 LLM context로 사용합니다.",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#343A46",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PDF, 센서 CSV, Wiki 문서를 먼저 검색하고 그 결과를 LLM context로 사용합니다.",
+              "fontSize": 25,
+              "color": "#343A46",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/69ov2hoz",
+      "id": "4",
+      "name": "rule",
+      "bbox": [
+        72,
+        314,
+        1136,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#B8BCC4",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/6p8fylsr",
+      "id": "5",
+      "bbox": [
+        125,
+        342,
+        1030,
+        280
+      ],
+      "alt": "OceanClaw system architecture",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "08afe552-bb54-4b06-8661-266e3cae6b9f",
+        "contentType": "image/png",
+        "byteLength": 71574
+      }
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sb6d4r65",
+      "id": "6",
+      "name": "footer",
+      "bbox": [
+        72,
+        666,
+        720,
+        28
+      ],
+      "geometry": "rect",
+      "text": "OceanClaw Demo Video",
+      "textPreview": "OceanClaw Demo Video",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#606672",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "OceanClaw Demo Video"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "OceanClaw Demo Video",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#606672",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "OceanClaw Demo Video",
+              "fontSize": 16,
+              "color": "#606672",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
