@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+from socket import timeout
 from typing import Dict, List
 
 import faiss
@@ -144,6 +145,7 @@ def search_faiss_index(
         metadata = json.load(f)
 
     expanded_query = expand_query(query)
+    #expanded_query = query
     query_vector = normalize_vectors([embed_text(expanded_query, model, base_url, timeout)])
     scores, indices = faiss_index.search(query_vector, top_k)
     documents = metadata["documents"]

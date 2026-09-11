@@ -1,0 +1,20 @@
+[
+  {
+    "mode": "titles",
+    "requests": 3,
+    "hits": 3,
+    "errors": 0,
+    "context_hits": 0,
+    "median_seconds": 2.380228199999692,
+    "max_seconds": 2.699256799998693
+  },
+  {
+    "mode": "titles_neighbors",
+    "requests": 3,
+    "hits": 3,
+    "errors": 0,
+    "context_hits": 0,
+    "median_seconds": 2.7834129999992,
+    "max_seconds": 3.684104199999638
+  }
+]

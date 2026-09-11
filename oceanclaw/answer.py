@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from time import perf_counter
+
 from . import config
 from .ollama_chat import chat
 from .router import route_by_score
@@ -20,7 +22,13 @@ Do not include a source section yourself. The program will attach verified sourc
 """
 
 
-def search_manual(question: str, top_k: int) -> list[dict]:
+def search_manual(question: str, top_k: int = 3, profile: str = "titles",
+                  min_score: float = 0.0, max_chars: int = 5000) -> list[dict]:
+    if profile not in {"legacy", "titles", "titles_neighbors"}:
+        raise ValueError("Unknown manual profile")
+    if profile != "legacy":
+        from .contextual_manual import search_contextual_manual
+        return search_contextual_manual(question, top_k, profile == "titles_neighbors", min_score, max_chars)
     results = search_faiss_index(
         query=question,
         faiss_path=config.PDF_FAISS_PATH,
@@ -100,6 +108,8 @@ def format_context(results: list[dict]) -> str:
                 f"[{index}] text:",
                 str(result["text"]),
             ]
+        if result.get("title_paths"):
+            lines.insert(-2, f"[{index}] sections: {result['title_paths']}")
         blocks.append("\n".join(lines))
     return "\n\n---\n\n".join(blocks)
 
@@ -128,14 +138,22 @@ def unique_sources(results: list[dict]) -> list[str]:
 
 def answer_question(
     question: str,
-    top_k: int = 4,
+    top_k: int = 3,
     min_score: float = 0.0,
     route_override: str | None = None,
     save_log: bool = False,
+    manual_profile: str = "titles",
+    max_context_chars: int = 5000,
 ) -> dict:
+    started = perf_counter()
+    if manual_profile not in {"legacy", "titles", "titles_neighbors"}:
+        raise ValueError("Unknown manual profile")
+    def manual_results_for_question():
+        return search_manual(question, top_k, manual_profile, min_score, max_context_chars)
+
     if route_override == "manual":
         route = "manual"
-        results = search_manual(question, top_k)
+        results = manual_results_for_question()
     elif route_override == "sensor":
         route = "sensor"
         results = search_sensor(question, top_k)
@@ -144,18 +162,19 @@ def answer_question(
         results = search_wiki(question, top_k)
     elif route_override == "both":
         route = "both"
-        results = search_manual(question, top_k) + search_sensor(question, top_k)
+        results = manual_results_for_question() + search_sensor(question, top_k)
     elif route_override == "all":
         route = "all"
         results = (
-            search_manual(question, top_k)
+            manual_results_for_question()
             + search_sensor(question, top_k)
             + search_wiki(question, top_k)
         )
     else:
-        manual_results = search_manual(question, top_k)
+        manual_results = manual_results_for_question()
         sensor_results = search_sensor(question, top_k)
-        route = route_by_score(manual_results, sensor_results)
+        # Scores from different embedding models are not directly comparable.
+        route = route_by_score(manual_results, sensor_results) if manual_profile == "legacy" else "both"
         if route == "manual":
             results = manual_results
         elif route == "sensor":
@@ -163,7 +182,8 @@ def answer_question(
         else:
             results = manual_results + sensor_results
 
-    filtered_results = [result for result in results if result["score"] >= min_score]
+    filtered_results = [result for result in results if result.get("context_role") == "neighbor" or result["score"] >= min_score]
+    retrieval_seconds = perf_counter() - started
     expanded_query = results[0].get("expanded_query", question) if results else question
 
     if not filtered_results:
@@ -174,6 +194,10 @@ def answer_question(
             "answer": "검색된 근거가 부족해서 답변할 수 없습니다.",
             "sources": [],
             "results": results,
+            "manual_profile": manual_profile,
+            "timing": {"retrieval_seconds": retrieval_seconds, "generation_seconds": 0,
+                       "total_seconds": perf_counter() - started},
+            "context_chars": 0,
         }
 
     user_prompt = f"""Question:
@@ -206,6 +230,10 @@ Context:
         "answer": content,
         "sources": unique_sources(filtered_results),
         "results": filtered_results,
+        "manual_profile": manual_profile,
+        "timing": {"retrieval_seconds": retrieval_seconds, "generation_seconds": perf_counter() - started - retrieval_seconds,
+                   "total_seconds": perf_counter() - started},
+        "context_chars": sum(len(r["text"]) for r in filtered_results),
     }
 
     if save_log:

@@ -1,0 +1,15 @@
+{"id":"h01","question":"시동 전에 바닷물 흡입 밸브가 열려 있는지 봐야 하는 이유가 뭐야?","page":21,"evidence":"Dry operation of the seawater pump would quickly cause irreparable damage to the internal impeller."}
+{"id":"h02","question":"시동을 걸기 전 기관실에 어떤 증기가 없는지 확인해야 해?","page":21,"evidence":"there are no gas or combustive vapours in the engine room."}
+{"id":"h03","question":"엔진이 이미 돌아가는데 시동 조작을 계속 유지해도 돼?","page":21,"evidence":"Do not extend the start-up control when the engine is already running."}
+{"id":"h04","question":"수온이 높다는 알람이 뜨면 회전수를 어떻게 해야 해?","page":22,"evidence":"reduce the engine speed and return to port"}
+{"id":"h05","question":"윤활유 저압 경고가 계속 남으면 어디에 연락해야 해?","page":22,"evidence":"If the fault persists, return to low speed, and contact a service centre."}
+{"id":"h06","question":"주유하는 동안 탱크 안에 무엇이 들어가지 않게 해야 해?","page":22,"evidence":"no solid or liquid pollutants enter the fuel tank"}
+{"id":"h07","question":"새 엔진의 첫 50시간에는 어떤 운전을 피하는 게 좋아?","page":23,"evidence":"avoid using the engine at high power for long periods during the first 50 hours."}
+{"id":"h08","question":"회전 부품 보호 덮개는 엔진이 어떤 상태일 때만 제거해?","page":23,"evidence":"They must only be removed when the engine is not turning over."}
+{"id":"h09","question":"장기 보관을 위한 엔진 보호 처리는 사용하지 않는 기간이 얼마나 길 때 필요해?","page":83,"evidence":"a planned period of inactivity that lasts longer than two months"}
+{"id":"h10","question":"보존 처리를 마친 엔진과 계기판에는 어떤 표지를 붙여야 해?","page":83,"evidence":"Place signs indicating “ENGINE WITHOUT OIL” on the engine and on the dashboard."}
+{"id":"h11","question":"엔진을 장기간 계속 보관하면 보호 처리를 몇 개월마다 반복해?","page":83,"evidence":"repeat these operations every 6 months"}
+{"id":"h12","question":"오래 보관했던 엔진을 다시 사용할 때 흡입구와 배출구의 마개는 어떻게 해?","page":84,"evidence":"Remove the plugs and/or seals from the engine’s intake, discharge, ventilation and bleeder holes"}
+{"id":"h13","question":"장기 보관 후 엔진을 다시 켜면 어떤 상태가 될 때까지 공회전해?","page":84,"evidence":"Start the engine and let it idle until completely stabilised."}
+{"id":"h14","question":"가속 레버가 전혀 반응하지 않는 고장에서는 회전수가 얼마로 유지돼?","page":85,"evidence":"the running speed stabilises at 750 RPM"}
+{"id":"h15","question":"가속 레버가 일부만 반응하는 비상 상태에서는 반쯤 움직였을 때 회전수가 최대 얼마까지 올라가?","page":85,"evidence":"the speed increases progressively up to 2000 RPM"}

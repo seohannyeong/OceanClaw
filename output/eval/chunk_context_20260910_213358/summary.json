@@ -1,0 +1,22 @@
+[
+  {
+    "mode": "baseline",
+    "questions": 30,
+    "hits_at_3": 19,
+    "mrr_at_3": 0.5444444444444444,
+    "context_hits": 20,
+    "mean_seed_chars": 2117.4333333333334,
+    "mean_context_chars": 4060.133333333333,
+    "mean_context_pieces": 7.033333333333333
+  },
+  {
+    "mode": "titles",
+    "questions": 30,
+    "hits_at_3": 21,
+    "mrr_at_3": 0.6166666666666667,
+    "context_hits": 22,
+    "mean_seed_chars": 2082.1666666666665,
+    "mean_context_chars": 3835.0666666666666,
+    "mean_context_pieces": 6.7
+  }
+]

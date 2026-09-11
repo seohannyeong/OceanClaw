@@ -1,0 +1,16 @@
+[
+  {
+    "mode": "titles",
+    "requests": 15,
+    "hits": 12,
+    "errors": 0,
+    "context_hits": 12
+  },
+  {
+    "mode": "translated",
+    "requests": 15,
+    "hits": 9,
+    "errors": 0,
+    "context_hits": 0
+  }
+]

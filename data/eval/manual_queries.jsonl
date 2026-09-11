@@ -1,0 +1,30 @@
+{"id":"q01","group":"covered","question":"엔진 오일 점검 시 엔진은 어떤 상태여야 해?","page":69,"evidence":"Proceed only with engine not running and at low temperature to avoid any risk of burns."}
+{"id":"q02","group":"covered","question":"냉각수 확인은 엔진이 차가울 때 어느 높이를 기준으로 해?","page":70,"evidence":"a few centimetres below the coolant filter port"}
+{"id":"q03","group":"covered","question":"연료 필터 교체할 때 새 씰에 무엇을 발라야 해?","page":77,"evidence":"Moisten the new filter seal with diesel or engine oil."}
+{"id":"q04","group":"covered","question":"배터리 전해액이 부족하면 무엇으로 보충해?","page":70,"evidence":"only use distilled water to top up"}
+{"id":"q05","group":"covered","question":"해수 펌프 임펠러 교체 시 삽입할 때 어떤 윤활제를 써?","page":79,"evidence":"Only insert the impeller with silicon lubricant or soapy water."}
+{"id":"q06","group":"covered","question":"엔진 오일 필터 교체 시 씰이 닿은 뒤 얼마나 더 돌려?","page":73,"evidence":"then tighten by a further 3/4 of a turn."}
+{"id":"q07","group":"covered","question":"냉각수 교체 후 회로의 공기는 어떻게 처리해?","page":79,"evidence":"Bleed the circuit and top-up if necessary."}
+{"id":"q08","group":"covered","question":"배터리 단자를 분리해도 엔진을 계속 작동시켜도 돼?","page":69,"evidence":"Do not disconnect the batteries when the engine is running."}
+{"id":"q09","group":"covered","question":"해수와 오일 열교환기 체결 나사의 조임 토크는 얼마야?","page":76,"evidence":"Seawater/oil heat exchanger screws 16.5 ± 1.5 N·m"}
+{"id":"q10","group":"covered","question":"연료 프리필터 수분 분리기는 몇 시간마다 배수해?","page":70,"evidence":"Drain the Fuel Pre-filter/water separator every 50 hours."}
+{"id":"q11","group":"paraphrase","question":"윤활유 양을 재려는데 기계가 돌아가는 중에 해도 돼?","page":69,"evidence":"Proceed only with engine not running and at low temperature to avoid any risk of burns."}
+{"id":"q12","group":"paraphrase","question":"냉각액이 충분한지 보려면 식은 상태에서 어디까지 차 있어야 해?","page":70,"evidence":"a few centimetres below the coolant filter port"}
+{"id":"q13","group":"paraphrase","question":"연료 여과기를 새로 달기 전에 고무 씰을 뭘로 적셔?","page":77,"evidence":"Moisten the new filter seal with diesel or engine oil."}
+{"id":"q14","group":"paraphrase","question":"축전지 안의 액체가 모자라면 수돗물을 넣어도 돼?","page":70,"evidence":"only use distilled water to top up"}
+{"id":"q15","group":"paraphrase","question":"바닷물 펌프의 고무 날개를 끼울 때 비눗물을 써도 돼?","page":79,"evidence":"Only insert the impeller with silicon lubricant or soapy water."}
+{"id":"q16","group":"paraphrase","question":"윤활유 여과기를 새로 끼울 때 고무 링이 닿으면 몇 바퀴 더 돌려?","page":73,"evidence":"then tighten by a further 3/4 of a turn."}
+{"id":"q17","group":"paraphrase","question":"냉각액을 새로 채운 다음 공기 빼기도 해야 돼?","page":79,"evidence":"Bleed the circuit and top-up if necessary."}
+{"id":"q18","group":"paraphrase","question":"기관이 돌아갈 때 축전지 연결을 빼도 괜찮아?","page":69,"evidence":"Do not disconnect the batteries when the engine is running."}
+{"id":"q19","group":"paraphrase","question":"바닷물과 윤활유 사이 열교환기의 나사를 어느 세기로 죄어야 해?","page":76,"evidence":"Seawater/oil heat exchanger screws 16.5 ± 1.5 N·m"}
+{"id":"q20","group":"paraphrase","question":"연료의 물을 걸러내는 전처리 여과기는 물 빼는 주기가 얼마야?","page":70,"evidence":"Drain the Fuel Pre-filter/water separator every 50 hours."}
+{"id":"q21","group":"uncovered","question":"아연 양극이 얼마나 부식되면 새것으로 바꿔야 해?","page":72,"evidence":"if the corrosion exceeds 50% of the volume, replace it."}
+{"id":"q22","group":"uncovered","question":"공기 여과기의 먼지는 압축 공기를 어느 방향으로 불어서 제거해?","page":71,"evidence":"Never blow air into the filter from the outside."}
+{"id":"q23","group":"uncovered","question":"터보차저 축이 걸리는지 알아보려면 어떻게 해?","page":77,"evidence":"Apply manual torque on shaft to verify free rotation and catch any sticking effect."}
+{"id":"q24","group":"uncovered","question":"웨이스트게이트 액추에이터 레버에서 어떤 손상을 찾아야 해?","page":77,"evidence":"detect sticking due to rust or mechanical damage."}
+{"id":"q25","group":"uncovered","question":"흡기 밸브 간극의 허용 범위는 얼마야?","page":81,"evidence":"Intake 0.25 ± 0.05 mm"}
+{"id":"q26","group":"uncovered","question":"배기 밸브 간극의 규정값은 얼마야?","page":81,"evidence":"Exhaust 0.51 ± 0.05 mm"}
+{"id":"q27","group":"uncovered","question":"보조 벨트 장력은 수동으로 다시 맞춰야 해?","page":80,"evidence":"The belt tension is adjusted automatically"}
+{"id":"q28","group":"uncovered","question":"댐퍼 플라이휠 표면이 손상됐다면 어떻게 해?","page":80,"evidence":"If the damper is damaged, replace it."}
+{"id":"q29","group":"uncovered","question":"연료 탱크 내부를 위에서 볼 수 없으면 물과 이물질을 어떻게 찾아?","page":78,"evidence":"take a sample of the fuel from the bottom of the tank"}
+{"id":"q30","group":"uncovered","question":"전원 케이블 단자에 산화가 있으면 어떻게 처리해?","page":70,"evidence":"If any oxidation is present, clean the surfaces of the poles (+/-) and the relative cable terminals."}

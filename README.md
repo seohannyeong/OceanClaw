@@ -6,6 +6,16 @@ Ollama 기반 로컬 LLM, FAISS vector search, FastAPI, Mattermost Slash Command
 
 프로젝트 폴더 구조와 파일별 역할은 [docs/project_structure.md](docs/project_structure.md)를 참고하세요.
 
+## 현재 기본 검색 방식 (2026-09-11)
+
+- 매뉴얼: PDF 제목 + 청크 본문을 BGE-M3로 임베딩하고 한국어 질문 원문으로 Top-3 검색합니다. 기본 경로에서는 번역과 규칙 기반 query expansion을 사용하지 않습니다.
+- 인덱스: `index/manual_titles/pdf.faiss`, `index/manual_titles/pdf_docs.json`. 기존 실험 인덱스는 보존합니다.
+- `/ask`, `/search/manual`, CLI, Web UI, Mattermost, Wiki 생성의 매뉴얼 검색에 적용됩니다. 센서와 Wiki 인덱스는 기존 nomic 방식을 유지합니다.
+- 인접 문맥은 기본 비활성화입니다. API에서 `manual_profile=titles_neighbors`로 선택할 수 있으며, `legacy`는 이전 방식입니다.
+- 경로를 생략하면 매뉴얼과 센서를 함께 검색합니다. 서로 다른 임베딩 모델의 점수로 경로를 비교하지 않습니다. 매뉴얼만 필요하면 `--route manual` 또는 API의 `route=manual`을 사용하세요.
+- 명시한 Top-K와 환경변수는 유지됩니다. 기존 `.env`의 `MATTERMOST_TOP_K=2`를 사용하는 경우 3으로 바꾸려면 직접 수정하세요.
+- Jetson에는 변경 코드와 `index/manual_titles`를 함께 반영하고 API를 재시작해야 합니다. 이전 측정용 ZIP에는 이번 변경이 포함되어 있지 않습니다.
+
 ## 1. 로컬 실행 준비
 
 프로젝트 폴더로 이동합니다.
@@ -48,6 +58,7 @@ ollama --version
 
 ```powershell
 ollama pull gemma3:4b
+ollama pull bge-m3
 ollama pull nomic-embed-text
 ```
 
@@ -63,6 +74,7 @@ ollama run gemma3:4b
 OLLAMA_BASE_URL=http://127.0.0.1:11434
 OLLAMA_CHAT_MODEL=gemma3:4b
 OLLAMA_EMBED_MODEL=nomic-embed-text
+TITLED_MANUAL_INDEX_DIR=index/manual_titles
 OLLAMA_TIMEOUT=60
 ```
 
@@ -92,15 +104,19 @@ python scripts\build_index.py
 ```text
 data/interim/pdf_pages.jsonl
 data/processed/pdf_chunks.jsonl
-index/pdf.faiss
-index/pdf_docs.json
+index/manual_titles/pdf.faiss
+index/manual_titles/pdf_docs.json
 ```
+
+이미 제공된 제목 인덱스가 있으면 재생성할 필요가 없습니다. 데이터 변경 후 재생성은 `python scripts\build_index.py --overwrite`로 실행합니다. 기존 본문 전용 인덱스 생성은 `--legacy` 옵션으로만 실행됩니다. 제목 없는 PDF 구간은 본문만 임베딩되며, 제목 매칭 결과는 `heading_audit.json`에 저장됩니다.
 
 검색 확인:
 
 ```powershell
-python scripts\search.py "engine oil level check dipstick MIN MAX" --top-k 3
+python scripts\search.py "엔진 오일 점검 방법" --top-k 3
 ```
+
+이전 검색은 `--profile legacy`로 선택합니다. 검색의 `--faiss`, `--docs`, `--model`은 legacy 전용이며 제목 검색 인덱스 위치는 `--index-dir`로 지정합니다.
 
 ### Sensor 인덱스
 

@@ -14,6 +14,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from oceanclaw import config
 from oceanclaw.ollama_embed import check_ollama
 from oceanclaw.vectorstore import search_faiss_index
+from oceanclaw.contextual_manual import search_contextual_manual
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -37,26 +38,30 @@ def print_results(query: str, results: list[dict]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Search PDF FAISS index.")
     parser.add_argument("query", nargs="?", help="Search query")
-    parser.add_argument("--top-k", type=int, default=5)
+    parser.add_argument("--top-k", type=int, default=3)
+    parser.add_argument("--profile", choices=["titles", "legacy"], default="titles")
+    parser.add_argument("--index-dir", default=config.TITLED_MANUAL_INDEX_DIR)
     parser.add_argument("--faiss", type=Path, default=config.PDF_FAISS_PATH)
     parser.add_argument("--docs", type=Path, default=config.PDF_DOCS_PATH)
     parser.add_argument("--model", default=config.OLLAMA_EMBED_MODEL)
     parser.add_argument("--ollama-url", default=config.OLLAMA_BASE_URL)
     parser.add_argument("--timeout", type=int, default=config.OLLAMA_TIMEOUT)
     args = parser.parse_args()
+    if args.top_k < 1:
+        parser.error("--top-k must be positive")
 
     check_ollama(args.ollama_url, args.timeout)
 
+    def search(query):
+        if args.profile == "titles":
+            return search_contextual_manual(query, args.top_k, directory=args.index_dir,
+                                             base_url=args.ollama_url, timeout=args.timeout)
+        return search_faiss_index(query, config.project_path(str(args.faiss)),
+                                  config.project_path(str(args.docs)), args.model,
+                                  args.ollama_url, args.timeout, args.top_k)
+
     if args.query:
-        results = search_faiss_index(
-            query=args.query,
-            faiss_path=config.project_path(str(args.faiss)),
-            docs_path=config.project_path(str(args.docs)),
-            model=args.model,
-            base_url=args.ollama_url,
-            timeout=args.timeout,
-            top_k=args.top_k,
-        )
+        results = search(args.query)
         print_results(args.query, results)
         return 0
 
@@ -67,15 +72,7 @@ def main() -> int:
             break
         if not query:
             continue
-        results = search_faiss_index(
-            query=query,
-            faiss_path=config.project_path(str(args.faiss)),
-            docs_path=config.project_path(str(args.docs)),
-            model=args.model,
-            base_url=args.ollama_url,
-            timeout=args.timeout,
-            top_k=args.top_k,
-        )
+        results = search(query)
         print_results(query, results)
     return 0
 

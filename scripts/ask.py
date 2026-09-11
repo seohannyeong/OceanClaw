@@ -72,7 +72,7 @@ def print_answer(result: dict, show_context: bool) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Ask OceanClaw a question.")
     parser.add_argument("question", nargs="?", help="Question to ask")
-    parser.add_argument("--top-k", type=int, default=4)
+    parser.add_argument("--top-k", type=int, default=3)
     parser.add_argument("--min-score", type=float, default=0.0)
     parser.add_argument("--save-log", action="store_true", help="Save answer to wiki/logs")
     parser.add_argument(

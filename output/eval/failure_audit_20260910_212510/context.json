@@ -1,0 +1,278 @@
+[
+  {
+    "question": {
+      "id": "q06",
+      "group": "covered",
+      "question": "엔진 오일 필터 교체 시 씰이 닿은 뒤 얼마나 더 돌려?",
+      "page": 73,
+      "evidence": "then tighten by a further 3/4 of a turn.",
+      "relevant_chunk_ids": [
+        "yanmar_6lf_operation_manual-p73-c3"
+      ]
+    },
+    "expected_page_chunks": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 73,
+        "chunk_id": "yanmar_6lf_operation_manual-p73-c0",
+        "text": "INSPECTION AND MAINTENANCE\n6LF Series Operation Manual 67\nChange Engine Lubricant Oil\nNOTICE\nOnly proceed with the engine stopped and at a low \ntemperature, so as to avoid the risk of burning.\n• Place a container under the hand pump \n(Figure 7, (3)) at the outlet pipe (Figure 7, (2)) to \ncollect the spent oil.\n• Open the extraction cock by setting the lever \n(Figure 7, (1)) to the vertical position.\n• Loosen the oil filler plug (Figure 7, (4)) and act on \nthe hand pump (Figure 7, (3)) required to extract \nthe oil until the oil sump is completely empty.\n• Refill with oil through the filler on the cover. \nRefer to the table entitled REFILLING (P. 3 5) for \nthe correct type of oil. Tighten the cap.\n• Using the dipstick (Figure 7, (4)), check that the"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 73,
+        "chunk_id": "yanmar_6lf_operation_manual-p73-c1",
+        "text": "the correct type of oil. Tighten the cap.\n• Using the dipstick (Figure 7, (4)), check that the \noil level is between the “Min” and “Max” levels.\n• Close the cock by lifting the lever (Figure 7, (1)) \nto the horizontal position.\nFigure 7\nWARNING\nRisk of Injury\n• Dispose of consumable materials and the \nparts in contact with them (for example filters) \nin accordance with the law. \n• The workshops of the Service Network are \nequipped for this purpose. \n• Correct behavior will ensure that vessel is \nused as environmentally friendly as possible.\nNOTICE\nGeneral Prescriptions\n• After refilling, make sure that the oil level does \nnot exceed the “Max” limit indicated on the \ndipstick. Make sure that the oil dipstick is inserted \ncorrectly and that the oil refill filler neck plug has"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 73,
+        "chunk_id": "yanmar_6lf_operation_manual-p73-c2",
+        "text": "dipstick. Make sure that the oil dipstick is inserted \ncorrectly and that the oil refill filler neck plug has \nbeen tightened fully in a clockwise direction.\n• Failure to comply completely or partially with \nthese requirements may result in the risk of \nserious damage to the engine and may even, on \noccasion, invalidate the warranty.\nReplace Engine Oil Filter\nOnly proceed with the engine stopped and at a low \ntemperature, so as to avoid the risk of burning.\nOnly use original YANMAR filters specified for this \nengine type.\n• Place a container under the filter support \n(Figure 8, (1)), to collect the spent oil.\n• Loosen the filter and remove it.\n• Carefully clean the surfaces of the support that \nare in contact with the filter sealing gasket."
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 73,
+        "chunk_id": "yanmar_6lf_operation_manual-p73-c3",
+        "text": "• Carefully clean the surfaces of the support that \nare in contact with the filter sealing gasket.\n• Moisten the new filter gasket with a thin layer of \noil.\n• Manually tighten the new filter in position until the \nseal ring is in contact with the support, then \ntighten by a further 3/4 of a turn.\n• Dispose of the old filter according to legislation in \nforce.\nFigure 8\n1\n2\n3 4\n122913-00X00\n1\n122914-00X00\n6LF_OPM_v2022.book  67 ページ  ２０２５年１２月２日　火曜日　午後２時１９分"
+      }
+    ],
+    "same_evidence_elsewhere": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 77,
+        "chunk_id": "yanmar_6lf_operation_manual-p77-c3",
+        "text": "oil.\n• Manually tighten the new filter in position until the \nseal ring is in contact with the support, then \ntighten by a further 3/4 of a turn.\nFigure 17\nTightening torque\nAir/seawater heat exchanger \nscrews 18 N·m\n1\n2\n3\n122922-00X00\n122923-00X00\n6LF_OPM_v2022.book  71 ページ  ２０２５年１２月２日　火曜日　午後２時１９分"
+      }
+    ]
+  },
+  {
+    "question": {
+      "id": "q11",
+      "group": "paraphrase",
+      "question": "윤활유 양을 재려는데 기계가 돌아가는 중에 해도 돼?",
+      "page": 69,
+      "evidence": "Proceed only with engine not running and at low temperature to avoid any risk of burns.",
+      "relevant_chunk_ids": [
+        "yanmar_6lf_operation_manual-p69-c1"
+      ]
+    },
+    "expected_page_chunks": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 69,
+        "chunk_id": "yanmar_6lf_operation_manual-p69-c0",
+        "text": "INSPECTION AND MAINTENANCE\n6LF Series Operation Manual 63\nREQUIREMENTS\nGuidelines\n• Do not disconnect the batteries when the engine \nis running.\n• Never carry out arc welding close to the engine \nwithout first removing the electrical cables.\n• After performing any maintenance work that \ninvolves removing the battery/batteries, make \nsure that the terminals are securely connected to \nthe poles.\n• Do not use a battery charger to start the engine.\n• Do not paint the equipment, components and \nelectrical connectors fitted to the engine.\n• Always disconnect the battery/batteries before \ncarrying out any work on electrical devices.\nNOTICE\nGeneral Prescriptions\nFailure to comply completely or partially with these \nrequirements may result in the risk of serious"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 69,
+        "chunk_id": "yanmar_6lf_operation_manual-p69-c1",
+        "text": "Failure to comply completely or partially with these \nrequirements may result in the risk of serious \ndamage to the engine and may even, on occasion, \ninvalidate the warranty.\nMAINTENANCE PROCEDURES\nCheck Oil Level in Engine\nProceed only with engine not running and at low \ntemperature to avoid any risk of burns.\n• Use the dipstick (Figure 1, (1)) to check that the \noil level is between the “MIN” and “MAX” limits.\n• If the level is too low, remove the relevant plug \n(Figure 1, (2)) and top-up through the filler inlet \non the cylinder head observing the quantities \nindicated on the page 35.\nFigure 1\nNOTICE\nGeneral Prescriptions\n• After refilling, make sure that the oil level does \nnot exceed the “Max” limit indicated on the \ndipstick. Make sure that the oil dipstick is inserted"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 69,
+        "chunk_id": "yanmar_6lf_operation_manual-p69-c2",
+        "text": "not exceed the “Max” limit indicated on the \ndipstick. Make sure that the oil dipstick is inserted \ncorrectly and that the oil refill filler neck plug has \nbeen tightened fully in a clockwise direction.\n• Failure to comply completely or partially with \nthese requirements may result in the risk of \nserious damage to the engine and may even, on \noccasion, invalidate the warranty.\n1\n2\n122906-00X00\n6LF_OPM_v2022.book  63 ページ  ２０２５年１２月２日　火曜日　午後２時１９分"
+      }
+    ],
+    "same_evidence_elsewhere": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 70,
+        "chunk_id": "yanmar_6lf_operation_manual-p70-c0",
+        "text": "INSPECTION AND MAINTENANCE\n64 6LF Series Operation Manual\nCheck Coolant Level\nProceed only with engine not running and at low \ntemperature to avoid any risk of burns.\n• Remove the coolant filter cap of the tank.\n• Visually check the coolant level.\n• Top-up the tank if necessary according to the \nindications provided on the page 35.\n• Make sure that when the engine is cold, the \ncoolant level is a few centimetres below the \ncoolant filter port.\nWARNING\nRisk of Burns\n• Open the filler cap of the coolant tank only if \nnecessary and only when the engine is cold.\n• Failure to comply with these prescriptions \ncan result in the risk of serious injury and \nserious damages to the vessel.\nDrain the Fuel Pre-filter/\nWater Separator\nDrain the Fuel Pre-filter/water separator every 50 \nhours."
+      }
+    ]
+  },
+  {
+    "question": {
+      "id": "q13",
+      "group": "paraphrase",
+      "question": "연료 여과기를 새로 달기 전에 고무 씰을 뭘로 적셔?",
+      "page": 77,
+      "evidence": "Moisten the new filter seal with diesel or engine oil.",
+      "relevant_chunk_ids": [
+        "yanmar_6lf_operation_manual-p77-c2"
+      ]
+    },
+    "expected_page_chunks": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 77,
+        "chunk_id": "yanmar_6lf_operation_manual-p77-c0",
+        "text": "INSPECTION AND MAINTENANCE\n6LF Series Operation Manual 71\nIntercooler Exchanger (Air/Seawater)\nFigure 16\n1. Drain the seawater circuit system.\n2. Remove the components which prevent access \nto the coolant - seawater heat exchanger.\n3. Remove the heat exchanger from the engine.\n4. Remove the covers (Figure 16, (1)) and \n(Figure 16, (2)) at the bench or in a suitable \nplace.\n5. Extract the tube bundle (Figure 16, (3)).\n6. Clean the parts with soapy water. Do not use \naggressive solutions.\n7. Clean the shell and tube with low pressure \nsteam and water.\n8. Blow compressed air to dry the parts before \nrefitting the heat exchanger.\n9. Do not use aggressive detergents for copper, \nbrass, aluminium and tin.\n10. Replace all the gaskets during assembly.\n11. Complete assembly of the remaining"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 77,
+        "chunk_id": "yanmar_6lf_operation_manual-p77-c1",
+        "text": "brass, aluminium and tin.\n10. Replace all the gaskets during assembly.\n11. Complete assembly of the remaining \ncomponents following the operations indicated \nabove but in the reverse order, ensuring that \nthe screws are tightened to the specified \ntorque.\n12. Refill the engine coolant circuit through the \ncoolant filler cap and check and top up level in \nsubtank.\n• Start the engine and let it run for a few minutes; \nSwitch off the engine and wait for a few minutes \nbefore checking the engine coolant level through \nthe coolant filler cap and in subtank.\nTop up the system if necessary.\nVisually Inspect Turbocharger\n• Apply manual torque on shaft to verify free \nrotation and catch any sticking effect.\n• Verify possible wear patterns of compressor \nhousing."
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 77,
+        "chunk_id": "yanmar_6lf_operation_manual-p77-c2",
+        "text": "rotation and catch any sticking effect.\n• Verify possible wear patterns of compressor \nhousing.\n• Verify visual integrity of the wheels.\n• Check integrity of wastegate actuator lever to \ndetect sticking due to rust or mechanical damage.\n• At cold condition\n1. Removing mixing elbow.\n2. Check waste gate valve should be close.\nFuel Filter Change\nTo avoid the risk of burns, only do this with the \nengine switched off and at a low temperature:\n• Remove the filter by unscrewing it.\n• Check that the new filter has performance levels \nthat satisfy the needs of the engine (e.g. by \ncomparing them with the old one. See the \npage 57).\n• Moisten the new filter seal with diesel or engine \noil.\n• Manually tighten the new filter in position until the \nseal ring is in contact with the support, then"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 77,
+        "chunk_id": "yanmar_6lf_operation_manual-p77-c3",
+        "text": "oil.\n• Manually tighten the new filter in position until the \nseal ring is in contact with the support, then \ntighten by a further 3/4 of a turn.\nFigure 17\nTightening torque\nAir/seawater heat exchanger \nscrews 18 N·m\n1\n2\n3\n122922-00X00\n122923-00X00\n6LF_OPM_v2022.book  71 ページ  ２０２５年１２月２日　火曜日　午後２時１９分"
+      }
+    ],
+    "same_evidence_elsewhere": []
+  },
+  {
+    "question": {
+      "id": "q14",
+      "group": "paraphrase",
+      "question": "축전지 안의 액체가 모자라면 수돗물을 넣어도 돼?",
+      "page": 70,
+      "evidence": "only use distilled water to top up",
+      "relevant_chunk_ids": [
+        "yanmar_6lf_operation_manual-p70-c2"
+      ]
+    },
+    "expected_page_chunks": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 70,
+        "chunk_id": "yanmar_6lf_operation_manual-p70-c0",
+        "text": "INSPECTION AND MAINTENANCE\n64 6LF Series Operation Manual\nCheck Coolant Level\nProceed only with engine not running and at low \ntemperature to avoid any risk of burns.\n• Remove the coolant filter cap of the tank.\n• Visually check the coolant level.\n• Top-up the tank if necessary according to the \nindications provided on the page 35.\n• Make sure that when the engine is cold, the \ncoolant level is a few centimetres below the \ncoolant filter port.\nWARNING\nRisk of Burns\n• Open the filler cap of the coolant tank only if \nnecessary and only when the engine is cold.\n• Failure to comply with these prescriptions \ncan result in the risk of serious injury and \nserious damages to the vessel.\nDrain the Fuel Pre-filter/\nWater Separator\nDrain the Fuel Pre-filter/water separator every 50 \nhours."
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 70,
+        "chunk_id": "yanmar_6lf_operation_manual-p70-c1",
+        "text": "Drain the Fuel Pre-filter/\nWater Separator\nDrain the Fuel Pre-filter/water separator every 50 \nhours. \nReplace the filter element at the same interval als \nthe fine filter on the engine.\nComponent not supplied by YANMAR. Refer to the \ndocumentation provided by the Boatbuilder.\nCheck Integrity of Wiring, Connectors, \nPositive and Negative Poles of the \nSupply System and Check Their Fixing\nCheck the integrity of the following parts of the \nwiring: corrugated cables, connectors and \nfastening points to the engine.\nCheck the connections relating to \nconnectors-electrical components and the state of \npreservation of the positive and negative poles of \nthe power cables.\nIf any oxidation is present, clean the surfaces of the \npoles (+/-) and the relative cable terminals."
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 70,
+        "chunk_id": "yanmar_6lf_operation_manual-p70-c2",
+        "text": "If any oxidation is present, clean the surfaces of the \npoles (+/-) and the relative cable terminals. \nProtect them with grease - protective lubricant for \nelectrical contacts.\nCheck the Level of the Electrolytic \nSolution in the Batteries/Check and \nClean the Terminals\nProceed after positioning the batteries on a \nhorizontal surface.\n• Visually check that the level lies between the \n“Min” and “Max” limits; in the absence of any \nreference marks, make sure the liquid covers the \nlead plates contained in the elements by approx. \n5 mm.\n• When required, only use distilled water to top up \nthe elements whose level is below the minimum.\n• If the battery needs to be recharged, contact a \nspecialised workshop.\n• Diagnose the state of efficiency of the battery"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 70,
+        "chunk_id": "yanmar_6lf_operation_manual-p70-c3",
+        "text": "specialised workshop.\n• Diagnose the state of efficiency of the battery \ncharging system if a voltage level of less than 11 \nV (for nominal 12 V systems) or 22 V (for nominal \n24 V systems) is detected while the engine is \nrotating.\n• Check that the terminals and clamps are clean, \nwell tightened and protected by petroleum jelly. \nSome batteries have a single cover for the \ninspection plugs.\nWARNING\nRisk of Damage\n• The batteries contain sulphuric acid which is \nhighly caustic and corrosive. \n• Always wear gloves and protective glasses \nwhile topping up. \nIf possible, ensure that the check is carried \nout by specialised personnel.\n• Failure to comply with these prescriptions \ncan result in the risk of serious injury and \nserious damages to the vessel.\nRisk of Injury"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 70,
+        "chunk_id": "yanmar_6lf_operation_manual-p70-c4",
+        "text": "can result in the risk of serious injury and \nserious damages to the vessel.\nRisk of Injury\n• During the checks do not smoke or allow \nnaked flames near the batteries. Ensure that \nthe work area is suitably ventilated.\n• Failure to comply with these prescriptions \ncan result in the risk of serious injury.\n6LF_OPM_v2022.book  64 ページ  ２０２５年１２月２日　火曜日　午後２時１９分"
+      }
+    ],
+    "same_evidence_elsewhere": []
+  },
+  {
+    "question": {
+      "id": "q16",
+      "group": "paraphrase",
+      "question": "윤활유 여과기를 새로 끼울 때 고무 링이 닿으면 몇 바퀴 더 돌려?",
+      "page": 73,
+      "evidence": "then tighten by a further 3/4 of a turn.",
+      "relevant_chunk_ids": [
+        "yanmar_6lf_operation_manual-p73-c3"
+      ]
+    },
+    "expected_page_chunks": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 73,
+        "chunk_id": "yanmar_6lf_operation_manual-p73-c0",
+        "text": "INSPECTION AND MAINTENANCE\n6LF Series Operation Manual 67\nChange Engine Lubricant Oil\nNOTICE\nOnly proceed with the engine stopped and at a low \ntemperature, so as to avoid the risk of burning.\n• Place a container under the hand pump \n(Figure 7, (3)) at the outlet pipe (Figure 7, (2)) to \ncollect the spent oil.\n• Open the extraction cock by setting the lever \n(Figure 7, (1)) to the vertical position.\n• Loosen the oil filler plug (Figure 7, (4)) and act on \nthe hand pump (Figure 7, (3)) required to extract \nthe oil until the oil sump is completely empty.\n• Refill with oil through the filler on the cover. \nRefer to the table entitled REFILLING (P. 3 5) for \nthe correct type of oil. Tighten the cap.\n• Using the dipstick (Figure 7, (4)), check that the"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 73,
+        "chunk_id": "yanmar_6lf_operation_manual-p73-c1",
+        "text": "the correct type of oil. Tighten the cap.\n• Using the dipstick (Figure 7, (4)), check that the \noil level is between the “Min” and “Max” levels.\n• Close the cock by lifting the lever (Figure 7, (1)) \nto the horizontal position.\nFigure 7\nWARNING\nRisk of Injury\n• Dispose of consumable materials and the \nparts in contact with them (for example filters) \nin accordance with the law. \n• The workshops of the Service Network are \nequipped for this purpose. \n• Correct behavior will ensure that vessel is \nused as environmentally friendly as possible.\nNOTICE\nGeneral Prescriptions\n• After refilling, make sure that the oil level does \nnot exceed the “Max” limit indicated on the \ndipstick. Make sure that the oil dipstick is inserted \ncorrectly and that the oil refill filler neck plug has"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 73,
+        "chunk_id": "yanmar_6lf_operation_manual-p73-c2",
+        "text": "dipstick. Make sure that the oil dipstick is inserted \ncorrectly and that the oil refill filler neck plug has \nbeen tightened fully in a clockwise direction.\n• Failure to comply completely or partially with \nthese requirements may result in the risk of \nserious damage to the engine and may even, on \noccasion, invalidate the warranty.\nReplace Engine Oil Filter\nOnly proceed with the engine stopped and at a low \ntemperature, so as to avoid the risk of burning.\nOnly use original YANMAR filters specified for this \nengine type.\n• Place a container under the filter support \n(Figure 8, (1)), to collect the spent oil.\n• Loosen the filter and remove it.\n• Carefully clean the surfaces of the support that \nare in contact with the filter sealing gasket."
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 73,
+        "chunk_id": "yanmar_6lf_operation_manual-p73-c3",
+        "text": "• Carefully clean the surfaces of the support that \nare in contact with the filter sealing gasket.\n• Moisten the new filter gasket with a thin layer of \noil.\n• Manually tighten the new filter in position until the \nseal ring is in contact with the support, then \ntighten by a further 3/4 of a turn.\n• Dispose of the old filter according to legislation in \nforce.\nFigure 8\n1\n2\n3 4\n122913-00X00\n1\n122914-00X00\n6LF_OPM_v2022.book  67 ページ  ２０２５年１２月２日　火曜日　午後２時１９分"
+      }
+    ],
+    "same_evidence_elsewhere": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 77,
+        "chunk_id": "yanmar_6lf_operation_manual-p77-c3",
+        "text": "oil.\n• Manually tighten the new filter in position until the \nseal ring is in contact with the support, then \ntighten by a further 3/4 of a turn.\nFigure 17\nTightening torque\nAir/seawater heat exchanger \nscrews 18 N·m\n1\n2\n3\n122922-00X00\n122923-00X00\n6LF_OPM_v2022.book  71 ページ  ２０２５年１２月２日　火曜日　午後２時１９分"
+      }
+    ]
+  },
+  {
+    "question": {
+      "id": "q18",
+      "group": "paraphrase",
+      "question": "기관이 돌아갈 때 축전지 연결을 빼도 괜찮아?",
+      "page": 69,
+      "evidence": "Do not disconnect the batteries when the engine is running.",
+      "relevant_chunk_ids": [
+        "yanmar_6lf_operation_manual-p69-c0"
+      ]
+    },
+    "expected_page_chunks": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 69,
+        "chunk_id": "yanmar_6lf_operation_manual-p69-c0",
+        "text": "INSPECTION AND MAINTENANCE\n6LF Series Operation Manual 63\nREQUIREMENTS\nGuidelines\n• Do not disconnect the batteries when the engine \nis running.\n• Never carry out arc welding close to the engine \nwithout first removing the electrical cables.\n• After performing any maintenance work that \ninvolves removing the battery/batteries, make \nsure that the terminals are securely connected to \nthe poles.\n• Do not use a battery charger to start the engine.\n• Do not paint the equipment, components and \nelectrical connectors fitted to the engine.\n• Always disconnect the battery/batteries before \ncarrying out any work on electrical devices.\nNOTICE\nGeneral Prescriptions\nFailure to comply completely or partially with these \nrequirements may result in the risk of serious"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 69,
+        "chunk_id": "yanmar_6lf_operation_manual-p69-c1",
+        "text": "Failure to comply completely or partially with these \nrequirements may result in the risk of serious \ndamage to the engine and may even, on occasion, \ninvalidate the warranty.\nMAINTENANCE PROCEDURES\nCheck Oil Level in Engine\nProceed only with engine not running and at low \ntemperature to avoid any risk of burns.\n• Use the dipstick (Figure 1, (1)) to check that the \noil level is between the “MIN” and “MAX” limits.\n• If the level is too low, remove the relevant plug \n(Figure 1, (2)) and top-up through the filler inlet \non the cylinder head observing the quantities \nindicated on the page 35.\nFigure 1\nNOTICE\nGeneral Prescriptions\n• After refilling, make sure that the oil level does \nnot exceed the “Max” limit indicated on the \ndipstick. Make sure that the oil dipstick is inserted"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 69,
+        "chunk_id": "yanmar_6lf_operation_manual-p69-c2",
+        "text": "not exceed the “Max” limit indicated on the \ndipstick. Make sure that the oil dipstick is inserted \ncorrectly and that the oil refill filler neck plug has \nbeen tightened fully in a clockwise direction.\n• Failure to comply completely or partially with \nthese requirements may result in the risk of \nserious damage to the engine and may even, on \noccasion, invalidate the warranty.\n1\n2\n122906-00X00\n6LF_OPM_v2022.book  63 ページ  ２０２５年１２月２日　火曜日　午後２時１９分"
+      }
+    ],
+    "same_evidence_elsewhere": []
+  },
+  {
+    "question": {
+      "id": "q26",
+      "group": "uncovered",
+      "question": "배기 밸브 간극의 규정값은 얼마야?",
+      "page": 81,
+      "evidence": "Exhaust 0.51 ± 0.05 mm",
+      "relevant_chunk_ids": [
+        "yanmar_6lf_operation_manual-p81-c1"
+      ]
+    },
+    "expected_page_chunks": [
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 81,
+        "chunk_id": "yanmar_6lf_operation_manual-p81-c0",
+        "text": "INSPECTION AND MAINTENANCE\n6LF Series Operation Manual 75\nFigure 22\n3. Correctly position the cover (Figure 23, (3)) \nand tighten the nuts (Figure 23, (1)), \n(Figure 23, (2)) to the specified torque.\nFigure 23\nCheck Lifter Clearances and Adjust \nif Necessary\n1. Bring the piston of the cylinder whose \nclearance needs to be adjusted to the TDC. \nThe valves of this cylinder will be closed.\n2. Adjusting the clearance between the rocker \narms and the exhaust and intake valve control \npush-rods must be carried out strictly using an \nallen key wrench (Figure 24, (1)), feeler gauge \n(Figure 24, (2)) and ring spanner \n(Figure 24, (3)).\nFigure 24\n3. After adjustment, lock the nut securing the \nadjustment screw.\nTightening torque\nBelt protection cover \n(2 nuts M8 × 1.25)\n(Figure 23, (1))\n21 ± 2 N·m"
+      },
+      {
+        "source": "yanmar_6lf_operation_manual.pdf",
+        "page": 81,
+        "chunk_id": "yanmar_6lf_operation_manual-p81-c1",
+        "text": "adjustment screw.\nTightening torque\nBelt protection cover \n(2 nuts M8 × 1.25)\n(Figure 23, (1))\n21 ± 2 N·m\nBelt protection cover \n(3 nuts M8 × 1.25)\n(Figure 23, (2))\n30 ± 3 N·m\n2\n13\n122928-00X00\n2\n1\n3\n122927-00X00\nValve clearance adjustment\nIntake 0.25 ± 0.05 mm\nExhaust 0.51 ± 0.05 mm\nTightening torque\nRocker arm adjustment nut\n(12 nuts M8 × 1.25) 24 ± 4 N·m\n2\n1 3\n122929-00X00\n6LF_OPM_v2022.book  75 ページ  ２０２５年１２月２日　火曜日　午後２時１９分"
+      }
+    ],
+    "same_evidence_elsewhere": []
+  }
+]

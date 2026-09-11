@@ -1,0 +1,11 @@
+[
+  {
+    "mode": "multilingual",
+    "requests": 15,
+    "hits": 10,
+    "errors": 0,
+    "context_hits": 0,
+    "median_seconds": 0.03448940000089351,
+    "max_seconds": 0.11017479999827628
+  }
+]

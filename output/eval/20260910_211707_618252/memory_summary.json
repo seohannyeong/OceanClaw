@@ -1,0 +1,24 @@
+{
+  "sampling_errors": 0,
+  "models": [
+    {
+      "model": "nomic-embed-text:latest",
+      "samples": 150,
+      "max_observed_loaded_bytes": 488825159,
+      "max_observed_vram_bytes": 488825159
+    },
+    {
+      "model": "bge-m3:latest",
+      "samples": 150,
+      "max_observed_loaded_bytes": 932435721,
+      "max_observed_vram_bytes": 932435721
+    },
+    {
+      "model": "gemma3:4b",
+      "samples": 147,
+      "max_observed_loaded_bytes": 3957902540,
+      "max_observed_vram_bytes": 3957902540
+    }
+  ],
+  "note": "Maximum api/ps observation, not peak process memory. Loaded size includes VRAM; do not add them. Not Jetson measurements."
+}

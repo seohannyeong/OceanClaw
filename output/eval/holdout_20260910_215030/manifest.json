@@ -1,0 +1,114 @@
+{
+  "device": "Windows-11-10.0.26200-SP0",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "inputs": {
+    "questions": "7a26628e660113bf37297d28dadd157c464f043436c6372dd0458f23eb2d5d0e",
+    "pages": "f429ec094f90046fb9b65935e14d6e43c08490d751405b360113279214367aef",
+    "chunks": "6214b53c0f608f5d83d032820b0b83932732af163c3fd4a97a4ab6f2b140bc3f",
+    "base_index": "05fe2fb555031d323d9d4549414df2f8337986041405acd931e5330c633d64f0",
+    "title_index": "b2cbb7f6ff80581f5135a048f26529ec5fa42d1c7e62e238e248b45dc9fe8b97",
+    "title_docs": "72b63d1720d10efad0f9e6374e4ef36cb0627f81b7621175b8b4777b129115e1"
+  },
+  "api_url": null,
+  "models": {
+    "models": [
+      {
+        "name": "bge-m3:latest",
+        "model": "bge-m3:latest",
+        "modified_at": "2026-09-10T21:15:27.4922318+09:00",
+        "size": 1157672605,
+        "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "bert",
+          "families": [
+            "bert"
+          ],
+          "parameter_size": "566.70M",
+          "quantization_level": "F16",
+          "context_length": 8192,
+          "embedding_length": 1024
+        },
+        "capabilities": [
+          "embedding"
+        ]
+      },
+      {
+        "name": "gemma3:4b",
+        "model": "gemma3:4b",
+        "modified_at": "2026-07-13T15:55:41.9688633+09:00",
+        "size": 3338801804,
+        "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gemma3",
+          "families": [
+            "gemma3"
+          ],
+          "parameter_size": "4.3B",
+          "quantization_level": "Q4_K_M"
+        },
+        "capabilities": [
+          "completion"
+        ]
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "model": "nomic-embed-text:latest",
+        "modified_at": "2026-07-13T15:53:19.1189583+09:00",
+        "size": 274302450,
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "nomic-bert",
+          "families": [
+            "nomic-bert"
+          ],
+          "parameter_size": "137M",
+          "quantization_level": "F16",
+          "context_length": 2048,
+          "embedding_length": 768
+        },
+        "capabilities": [
+          "embedding"
+        ]
+      },
+      {
+        "name": "qwen3:4b",
+        "model": "qwen3:4b",
+        "modified_at": "2026-07-11T21:41:31.2258941+09:00",
+        "size": 2497293931,
+        "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "4.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 2560
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      }
+    ]
+  },
+  "limit": 15,
+  "repeats": 1,
+  "max_context_chars": 5000,
+  "modes": [
+    "multilingual"
+  ],
+  "multilingual_index_sha256": "723347313efe93e747543db46663b63bda4e1ee55657d02dceb630f531be4f55",
+  "multilingual_docs_sha256": "4f9356ce04d6f012088a68e6578c4c776d19523b16da1b9a12fa7fcd55f4f2a8",
+  "note": "New questions after development, same manual, disjoint answer pages. Not external blind evaluation. No tuning after results. First repeat may include cold starts. Answer correctness requires manual review."
+}
