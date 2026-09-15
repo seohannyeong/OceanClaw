@@ -13,7 +13,7 @@ Ollama 기반 로컬 LLM, FAISS vector search, FastAPI, Mattermost Slash Command
 - `/ask`, `/search/manual`, CLI, Web UI, Mattermost, Wiki 생성의 매뉴얼 검색에 적용됩니다. 센서와 Wiki 인덱스는 기존 nomic 방식을 유지합니다.
 - 인접 문맥은 기본 비활성화입니다. API에서 `manual_profile=titles_neighbors`로 선택할 수 있으며, `legacy`는 이전 방식입니다.
 - 경로를 생략하면 매뉴얼과 센서를 함께 검색합니다. 서로 다른 임베딩 모델의 점수로 경로를 비교하지 않습니다. 매뉴얼만 필요하면 `--route manual` 또는 API의 `route=manual`을 사용하세요.
-- 명시한 Top-K와 환경변수는 유지됩니다. 기존 `.env`의 `MATTERMOST_TOP_K=2`를 사용하는 경우 3으로 바꾸려면 직접 수정하세요.
+- 명시한 Top-K와 환경변수는 유지됩니다. Mattermost 응답 근거 수는 기본 `MATTERMOST_TOP_K=3`을 권장합니다.
 - Jetson에는 변경 코드와 `index/manual_titles`를 함께 반영하고 API를 재시작해야 합니다. 이전 측정용 ZIP에는 이번 변경이 포함되어 있지 않습니다.
 
 ## 1. 로컬 실행 준비
@@ -75,10 +75,10 @@ OLLAMA_BASE_URL=http://127.0.0.1:11434
 OLLAMA_CHAT_MODEL=gemma3:4b
 OLLAMA_EMBED_MODEL=nomic-embed-text
 TITLED_MANUAL_INDEX_DIR=index/manual_titles
-OLLAMA_TIMEOUT=60
+OLLAMA_TIMEOUT=300
 ```
 
-Jetson처럼 응답이 느린 환경에서는 `OLLAMA_TIMEOUT=300` 정도로 늘리는 것을 권장합니다.
+Jetson처럼 응답이 느린 환경에서는 `OLLAMA_TIMEOUT=300` 이상을 권장합니다.
 
 ## 3. 데이터와 인덱스 생성 순서
 
@@ -226,6 +226,15 @@ python scripts\run_api.py --host 0.0.0.0 --port 8000
 http://127.0.0.1:8000
 ```
 
+Web UI에서는 다음 작업을 할 수 있습니다.
+
+- 질문 입력 및 RAG 답변 생성
+- 검색 범위 선택: manual, sensor, wiki, both, all
+- 매뉴얼 검색 방식 선택: `titles`, `titles_neighbors`, `legacy`
+- 답변 출처와 Top-K 검색 근거 확인
+- 평가용 요약 복사: `top1_page`, `top3_pages`, `hit_at_3`
+- Wiki 문서 생성
+
 API 문서는 다음 주소에서 확인합니다.
 
 ```text
@@ -283,7 +292,7 @@ Request Method: POST
 MATTERMOST_SLASH_TOKEN=your-slash-command-token
 MATTERMOST_RESPONSE_TYPE=ephemeral
 MATTERMOST_DEFAULT_ROUTE=all
-MATTERMOST_TOP_K=2
+MATTERMOST_TOP_K=3
 MATTERMOST_SAVE_LOG=true
 MATTERMOST_WIKI_NOTE_ROUTE=all
 MATTERMOST_WIKI_NOTE_TOP_K=3
@@ -324,6 +333,7 @@ Ollama 모델을 설치합니다.
 
 ```bash
 ollama pull gemma3:4b
+ollama pull bge-m3
 ollama pull nomic-embed-text
 ```
 
@@ -331,12 +341,34 @@ Jetson은 응답이 느릴 수 있으므로 timeout을 늘립니다.
 
 ```bash
 export OLLAMA_TIMEOUT=300
+export TITLED_MANUAL_INDEX_DIR=index/manual_titles
 ```
 
 서버를 외부 접속 가능하게 실행합니다.
 
 ```bash
 python scripts/run_api.py --host 0.0.0.0 --port 8000
+```
+
+SSH 연결을 끊어도 서버를 유지하려면 `tmux`를 사용합니다.
+
+```bash
+sudo apt update
+sudo apt install tmux -y
+tmux new -s oceanclaw
+cd ~/OceanClaw
+source .venv/bin/activate
+export OLLAMA_TIMEOUT=300
+export TITLED_MANUAL_INDEX_DIR=index/manual_titles
+python scripts/run_api.py --host 0.0.0.0 --port 8000
+```
+
+서버를 켠 채로 빠져나오려면 `Ctrl+B`를 누른 뒤 `D`를 누릅니다.
+
+다시 서버 화면으로 들어가려면:
+
+```bash
+tmux attach -t oceanclaw
 ```
 
 Jetson IP를 확인합니다.
@@ -358,25 +390,116 @@ http://<Jetson-IP>:8000/docs
 ping <Jetson-IP>
 ```
 
-## 9. 현재 구현 상태
+## 9. Tailscale 원격 접속
+
+다른 지역 팀원이 Jetson 서버에 접속하려면 Tailscale을 사용합니다.
+
+1. 팀원을 Tailscale Admin Console에서 `oceanclaw1234` tailnet에 초대합니다.
+2. 팀원은 Tailscale 앱을 설치하고 초대받은 계정으로 로그인합니다.
+3. `Select a tailnet`에서 `oceanclaw1234`를 선택합니다.
+4. Devices 목록에서 `oceanclaw`가 보이는지 확인합니다.
+5. 브라우저에서 접속합니다.
+
+```text
+http://100.103.244.58:8000
+http://100.103.244.58:8000/docs
+```
+
+주의:
+
+- 반드시 `http://`로 접속합니다. `https://`가 아닙니다.
+- `localhost` 또는 `127.0.0.1`은 본인 PC를 의미하므로 팀원 PC에서는 사용할 수 없습니다.
+- Jetson 전원, Jetson Tailscale, OceanClaw 서버가 켜져 있어야 접속됩니다.
+
+연결 확인:
+
+```bash
+tailscale status
+ping 100.103.244.58
+```
+
+## 10. 평가셋과 테스트 기록
+
+평가 관련 파일은 `data/eval`에 있습니다.
+
+```text
+data/eval/manual_queries.jsonl
+data/eval/manual_holdout_v1.jsonl
+data/eval/manual_review_template.csv
+data/eval/README.md
+```
+
+평가표를 Excel에서 열 때 한글이 깨지면 `데이터 -> 텍스트/CSV에서`를 사용하고 인코딩을 `UTF-8`로 선택합니다.
+
+Web UI에서 질문을 실행한 뒤 `평가표 입력 요약`을 사용해 다음 값을 채웁니다.
+
+```text
+top1_page
+top3_pages
+hit_at_3
+answer_correct
+source_correct
+safety_issue
+notes
+status
+```
+
+자동 평가 스크립트:
+
+```powershell
+python scripts\compare_retrieval.py --validate-only
+python scripts\validate_holdout.py --limit 15 --modes titles
+```
+
+Jetson에서 실제 `/ask` 응답을 측정할 때:
+
+```bash
+python scripts/validate_holdout.py --api-url http://127.0.0.1:8000 --require-jetson --limit 15 --repeats 1
+```
+
+## 11. 개발보고서/포트폴리오 캡처 체크리스트
+
+보고서와 포트폴리오에는 다음 화면을 캡처하면 좋습니다.
+
+- Web UI 질문 입력 화면
+- 답변, 출처, 검색 근거 Top-K가 표시된 화면
+- 평가표 입력 요약 화면
+- FastAPI `/docs` 화면
+- Mattermost `/oceanclaw` 답변 화면
+- `wiki/logs` 또는 Obsidian Wiki 문서 화면
+- Tailscale Devices에서 `oceanclaw`가 보이는 화면
+- Jetson 터미널에서 서버가 실행 중인 화면
+
+추천 시연 질문:
+
+```text
+엔진 오일 점검 방법 알려줘
+엔진 오일 점검 시 엔진은 어떤 상태여야 해?
+냉각수 온도 경고가 뜨면 어떻게 해야 해?
+연료 프리필터 수분 분리기는 몇 시간마다 배수해?
+```
+
+## 12. 현재 구현 상태
 
 - PDF 텍스트 추출 및 JSONL 저장
 - LangChain 기반 chunk 분할
 - Ollama embedding 기반 문서 vector 변환
 - FAISS 기반 manual, sensor, wiki 검색
 - 한국어 질문과 영어 매뉴얼 검색을 보완하는 query expansion
+- BGE-M3와 제목 정보 기반 매뉴얼 검색
 - Ollama chat 기반 RAG 답변 생성
 - 답변 출처와 검색 근거 제공
 - 답변 결과를 `wiki/logs`에 자동 저장
 - Obsidian 호환 Wiki 폴더 구조
 - RAG 근거 기반 Wiki Markdown 문서 생성
 - FastAPI API 서버
-- 브라우저 Web UI
+- 브라우저 Web UI 및 평가 요약 복사
 - Mattermost Slash Command 답변 연동
 - Mattermost Wiki 문서 생성 명령 연동
 - Jetson Orin Nano 실행 구조
+- Tailscale 기반 원격 접속
 
-## 10. GitHub 업로드 주의사항
+## 13. GitHub 업로드 주의사항
 
 다음 파일은 보안상 GitHub에 올리지 않습니다.
 

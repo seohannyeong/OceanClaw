@@ -1,0 +1,46 @@
+﻿id,split,group,question,expected_source,expected_page,expected_evidence,route,top_k,evaluator,top1_page,top3_pages,hit_at_3,answer_correct,source_correct,safety_issue,notes,status
+q01,dev,covered,엔진 오일 점검 시 엔진은 어떤 상태여야 해?,yanmar_6lf_operation_manual.pdf,69,Proceed only with engine not running and at low temperature to avoid any risk of burns.,manual,3,,,,,,,,pending
+q02,dev,covered,냉각수 확인은 엔진이 차가울 때 어느 높이를 기준으로 해?,yanmar_6lf_operation_manual.pdf,70,a few centimetres below the coolant filter port,manual,3,,,,,,,,pending
+q03,dev,covered,연료 필터 교체할 때 새 씰에 무엇을 발라야 해?,yanmar_6lf_operation_manual.pdf,77,Moisten the new filter seal with diesel or engine oil.,manual,3,,,,,,,,pending
+q04,dev,covered,배터리 전해액이 부족하면 무엇으로 보충해?,yanmar_6lf_operation_manual.pdf,70,only use distilled water to top up,manual,3,,,,,,,,pending
+q05,dev,covered,해수 펌프 임펠러 교체 시 삽입할 때 어떤 윤활제를 써?,yanmar_6lf_operation_manual.pdf,79,Only insert the impeller with silicon lubricant or soapy water.,manual,3,,,,,,,,pending
+q06,dev,covered,엔진 오일 필터 교체 시 씰이 닿은 뒤 얼마나 더 돌려?,yanmar_6lf_operation_manual.pdf,73,then tighten by a further 3/4 of a turn.,manual,3,,,,,,,,pending
+q07,dev,covered,냉각수 교체 후 회로의 공기는 어떻게 처리해?,yanmar_6lf_operation_manual.pdf,79,Bleed the circuit and top-up if necessary.,manual,3,,,,,,,,pending
+q08,dev,covered,배터리 단자를 분리해도 엔진을 계속 작동시켜도 돼?,yanmar_6lf_operation_manual.pdf,69,Do not disconnect the batteries when the engine is running.,manual,3,,,,,,,,pending
+q09,dev,covered,해수와 오일 열교환기 체결 나사의 조임 토크는 얼마야?,yanmar_6lf_operation_manual.pdf,76,Seawater/oil heat exchanger screws 16.5 ± 1.5 N·m,manual,3,,,,,,,,pending
+q10,dev,covered,연료 프리필터 수분 분리기는 몇 시간마다 배수해?,yanmar_6lf_operation_manual.pdf,70,Drain the Fuel Pre-filter/water separator every 50 hours.,manual,3,,,,,,,,pending
+q11,dev,paraphrase,윤활유 양을 재려는데 기계가 돌아가는 중에 해도 돼?,yanmar_6lf_operation_manual.pdf,69,Proceed only with engine not running and at low temperature to avoid any risk of burns.,manual,3,,,,,,,,pending
+q12,dev,paraphrase,냉각액이 충분한지 보려면 식은 상태에서 어디까지 차 있어야 해?,yanmar_6lf_operation_manual.pdf,70,a few centimetres below the coolant filter port,manual,3,,,,,,,,pending
+q13,dev,paraphrase,연료 여과기를 새로 달기 전에 고무 씰을 뭘로 적셔?,yanmar_6lf_operation_manual.pdf,77,Moisten the new filter seal with diesel or engine oil.,manual,3,,,,,,,,pending
+q14,dev,paraphrase,축전지 안의 액체가 모자라면 수돗물을 넣어도 돼?,yanmar_6lf_operation_manual.pdf,70,only use distilled water to top up,manual,3,,,,,,,,pending
+q15,dev,paraphrase,바닷물 펌프의 고무 날개를 끼울 때 비눗물을 써도 돼?,yanmar_6lf_operation_manual.pdf,79,Only insert the impeller with silicon lubricant or soapy water.,manual,3,,,,,,,,pending
+q16,dev,paraphrase,윤활유 여과기를 새로 끼울 때 고무 링이 닿으면 몇 바퀴 더 돌려?,yanmar_6lf_operation_manual.pdf,73,then tighten by a further 3/4 of a turn.,manual,3,,,,,,,,pending
+q17,dev,paraphrase,냉각액을 새로 채운 다음 공기 빼기도 해야 돼?,yanmar_6lf_operation_manual.pdf,79,Bleed the circuit and top-up if necessary.,manual,3,,,,,,,,pending
+q18,dev,paraphrase,기관이 돌아갈 때 축전지 연결을 빼도 괜찮아?,yanmar_6lf_operation_manual.pdf,69,Do not disconnect the batteries when the engine is running.,manual,3,,,,,,,,pending
+q19,dev,paraphrase,바닷물과 윤활유 사이 열교환기의 나사를 어느 세기로 죄어야 해?,yanmar_6lf_operation_manual.pdf,76,Seawater/oil heat exchanger screws 16.5 ± 1.5 N·m,manual,3,,,,,,,,pending
+q20,dev,paraphrase,연료의 물을 걸러내는 전처리 여과기는 물 빼는 주기가 얼마야?,yanmar_6lf_operation_manual.pdf,70,Drain the Fuel Pre-filter/water separator every 50 hours.,manual,3,,,,,,,,pending
+q21,dev,uncovered,아연 양극이 얼마나 부식되면 새것으로 바꿔야 해?,yanmar_6lf_operation_manual.pdf,72,"if the corrosion exceeds 50% of the volume, replace it.",manual,3,,,,,,,,pending
+q22,dev,uncovered,공기 여과기의 먼지는 압축 공기를 어느 방향으로 불어서 제거해?,yanmar_6lf_operation_manual.pdf,71,Never blow air into the filter from the outside.,manual,3,,,,,,,,pending
+q23,dev,uncovered,터보차저 축이 걸리는지 알아보려면 어떻게 해?,yanmar_6lf_operation_manual.pdf,77,Apply manual torque on shaft to verify free rotation and catch any sticking effect.,manual,3,,,,,,,,pending
+q24,dev,uncovered,웨이스트게이트 액추에이터 레버에서 어떤 손상을 찾아야 해?,yanmar_6lf_operation_manual.pdf,77,detect sticking due to rust or mechanical damage.,manual,3,,,,,,,,pending
+q25,dev,uncovered,흡기 밸브 간극의 허용 범위는 얼마야?,yanmar_6lf_operation_manual.pdf,81,Intake 0.25 ± 0.05 mm,manual,3,,,,,,,,pending
+q26,dev,uncovered,배기 밸브 간극의 규정값은 얼마야?,yanmar_6lf_operation_manual.pdf,81,Exhaust 0.51 ± 0.05 mm,manual,3,,,,,,,,pending
+q27,dev,uncovered,보조 벨트 장력은 수동으로 다시 맞춰야 해?,yanmar_6lf_operation_manual.pdf,80,The belt tension is adjusted automatically,manual,3,,,,,,,,pending
+q28,dev,uncovered,댐퍼 플라이휠 표면이 손상됐다면 어떻게 해?,yanmar_6lf_operation_manual.pdf,80,"If the damper is damaged, replace it.",manual,3,,,,,,,,pending
+q29,dev,uncovered,연료 탱크 내부를 위에서 볼 수 없으면 물과 이물질을 어떻게 찾아?,yanmar_6lf_operation_manual.pdf,78,take a sample of the fuel from the bottom of the tank,manual,3,,,,,,,,pending
+q30,dev,uncovered,전원 케이블 단자에 산화가 있으면 어떻게 처리해?,yanmar_6lf_operation_manual.pdf,70,If any oxidation is present, clean the surfaces of the poles (+/-) and the relative cable terminals.,manual,3,,,,,,,,pending
+h01,holdout,manual,시동 전에 바닷물 흡입 밸브가 열려 있는지 봐야 하는 이유가 뭐야?,yanmar_6lf_operation_manual.pdf,21,Dry operation of the seawater pump would quickly cause irreparable damage to the internal impeller.,manual,3,,,,,,,,pending
+h02,holdout,manual,시동을 걸기 전 기관실에 어떤 증기가 없는지 확인해야 해?,yanmar_6lf_operation_manual.pdf,21,there are no gas or combustive vapours in the engine room.,manual,3,,,,,,,,pending
+h03,holdout,manual,엔진이 이미 돌아가는데 시동 조작을 계속 유지해도 돼?,yanmar_6lf_operation_manual.pdf,21,Do not extend the start-up control when the engine is already running.,manual,3,,,,,,,,pending
+h04,holdout,manual,수온이 높다는 알람이 뜨면 회전수를 어떻게 해야 해?,yanmar_6lf_operation_manual.pdf,22,reduce the engine speed and return to port,manual,3,,,,,,,,pending
+h05,holdout,manual,윤활유 저압 경고가 계속 남으면 어디에 연락해야 해?,yanmar_6lf_operation_manual.pdf,22,"If the fault persists, return to low speed, and contact a service centre.",manual,3,,,,,,,,pending
+h06,holdout,manual,주유하는 동안 탱크 안에 무엇이 들어가지 않게 해야 해?,yanmar_6lf_operation_manual.pdf,22,no solid or liquid pollutants enter the fuel tank,manual,3,,,,,,,,pending
+h07,holdout,manual,새 엔진의 첫 50시간에는 어떤 운전을 피하는 게 좋아?,yanmar_6lf_operation_manual.pdf,23,avoid using the engine at high power for long periods during the first 50 hours.,manual,3,,,,,,,,pending
+h08,holdout,manual,회전 부품 보호 덮개는 엔진이 어떤 상태일 때만 제거해?,yanmar_6lf_operation_manual.pdf,23,They must only be removed when the engine is not turning over.,manual,3,,,,,,,,pending
+h09,holdout,manual,장기 보관을 위한 엔진 보호 처리는 사용하지 않는 기간이 얼마나 길 때 필요해?,yanmar_6lf_operation_manual.pdf,83,a planned period of inactivity that lasts longer than two months,manual,3,,,,,,,,pending
+h10,holdout,manual,보존 처리를 마친 엔진과 계기판에는 어떤 표지를 붙여야 해?,yanmar_6lf_operation_manual.pdf,83,Place signs indicating “ENGINE WITHOUT OIL” on the engine and on the dashboard.,manual,3,,,,,,,,pending
+h11,holdout,manual,엔진을 장기간 계속 보관하면 보호 처리를 몇 개월마다 반복해?,yanmar_6lf_operation_manual.pdf,83,repeat these operations every 6 months,manual,3,,,,,,,,pending
+h12,holdout,manual,오래 보관했던 엔진을 다시 사용할 때 흡입구와 배출구의 마개는 어떻게 해?,yanmar_6lf_operation_manual.pdf,84,"Remove the plugs and/or seals from the engine’s intake, discharge, ventilation and bleeder holes",manual,3,,,,,,,,pending
+h13,holdout,manual,장기 보관 후 엔진을 다시 켜면 어떤 상태가 될 때까지 공회전해?,yanmar_6lf_operation_manual.pdf,84,Start the engine and let it idle until completely stabilised.,manual,3,,,,,,,,pending
+h14,holdout,manual,가속 레버가 전혀 반응하지 않는 고장에서는 회전수가 얼마로 유지돼?,yanmar_6lf_operation_manual.pdf,85,the running speed stabilises at 750 RPM,manual,3,,,,,,,,pending
+h15,holdout,manual,가속 레버가 일부만 반응하는 비상 상태에서는 반쯤 움직였을 때 회전수가 최대 얼마까지 올라가?,yanmar_6lf_operation_manual.pdf,85,the speed increases progressively up to 2000 RPM,manual,3,,,,,,,,pending

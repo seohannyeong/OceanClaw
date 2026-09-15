@@ -1,0 +1,9 @@
+category,name,path,status,usage,owner,source_or_origin,review_notes
+manual,Yanmar 6LF Operation Manual,data/raw/yanmar_6lf_operation_manual.pdf,in_use,manual RAG source,developer,public manufacturer manual,현재 주 평가 매뉴얼
+sensor_raw,Marine engine fault dataset,data/raw/data.csv,in_use,sensor event conversion,data_team,external public dataset candidate,실제 선박 정비 데이터는 아니므로 출처와 한계 기록 필요
+manual_pages,PDF page extraction,data/interim/pdf_pages.jsonl,generated,PDF extraction QA,developer,generated from manual PDF,page/source/text 구조 확인용
+manual_chunks,PDF chunks,data/processed/pdf_chunks.jsonl,generated,chunk QA and legacy/manual index,developer,generated from pdf_pages.jsonl,chunk boundary and evidence 포함 여부 확인용
+sensor_events,Converted sensor events,data/processed/sensor_events.csv,generated,sensor RAG source,developer,generated from data/raw/data.csv,component/severity/symptom/action 포함
+wiki_chunks,Wiki chunks,data/processed/wiki_chunks.jsonl,generated,wiki RAG source,developer,generated from wiki markdown,Obsidian Wiki 검색용
+eval_dev,Manual retrieval development questions,data/eval/manual_queries.jsonl,in_use,development retrieval evaluation,developer,manual evidence selected from PDF,개선 과정에서 사용한 30개 질문
+eval_holdout,Manual retrieval holdout questions,data/eval/manual_holdout_v1.jsonl,in_use,post-improvement validation,developer,manual evidence selected from disjoint pages,개선 후 검증용 15개 질문

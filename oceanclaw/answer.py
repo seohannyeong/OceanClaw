@@ -12,13 +12,25 @@ from .vectorstore import search_faiss_index
 SYSTEM_PROMPT = """You are OceanClaw, a ship maintenance AI assistant.
 Answer in Korean.
 Use only the provided context.
-Do not invent values, procedures, warnings, events, or page numbers.
-If the context does not contain enough information, say that the provided context is insufficient.
-Preserve safety warnings and important cautions.
-When explaining procedures, use concise numbered steps.
-When explaining sensor events, mention component, severity, running hours, symptom, and recommended action if present.
-When using wiki notes, distinguish them from official manual evidence.
-Do not include a source section yourself. The program will attach verified sources.
+
+Evidence priority rules:
+- Prefer evidence that directly answers the user's question.
+- For maintenance questions, prefer specific procedure sections such as "Maintenance Procedures", "Check", "Replace", "Drain", "Inspect", or a matching component/procedure title.
+- Treat general descriptions, EPA requirements, environmental conditions, and background text as secondary unless they directly answer the question.
+- If evidence appears to conflict, prioritize the more specific maintenance procedure over general background text and mention uncertainty briefly.
+
+Safety and grounding rules:
+- Do not invent values, procedures, warnings, events, causes, part names, or page numbers.
+- Do not reverse safety conditions, prohibitions, engine running/stopped state, temperature conditions, numeric values, or units.
+- Preserve safety warnings and important cautions.
+- If the context does not contain enough information, say that the provided context is insufficient.
+
+Answer style:
+- Start with the direct answer first.
+- When explaining procedures, use concise numbered steps.
+- When explaining sensor events, mention component, severity, running hours, symptom, and recommended action if present.
+- When using wiki notes, distinguish them from official manual evidence.
+- Do not include a source section yourself. The program will attach verified sources.
 """
 
 
@@ -73,13 +85,31 @@ def search_wiki(question: str, top_k: int) -> list[dict]:
     return results
 
 
+def format_title_paths(title_paths: list) -> list[str]:
+    """Return readable section paths for the LLM context."""
+    formatted = []
+    for path in title_paths or []:
+        if isinstance(path, (list, tuple)):
+            text = " > ".join(str(part) for part in path if part)
+        else:
+            text = str(path)
+        if text and text not in formatted:
+            formatted.append(text)
+    return formatted
+
+
+def format_score(value) -> str:
+    return f"{value:.4f}" if isinstance(value, (int, float)) else "context"
+
+
 def format_context(results: list[dict]) -> str:
     blocks = []
     for index, result in enumerate(results, start=1):
         if result.get("kind") == "sensor":
             doc = result["document"]
             lines = [
-                f"[{index}] kind: sensor",
+                f"[{index}] evidence_type: sensor_event",
+                f"[{index}] retrieval_score: {format_score(result.get('score'))}",
                 f"[{index}] event_id: {doc.get('event_id')}",
                 f"[{index}] component: {doc.get('component')}",
                 f"[{index}] severity: {doc.get('severity')}",
@@ -91,7 +121,8 @@ def format_context(results: list[dict]) -> str:
         elif result.get("kind") == "wiki":
             doc = result["document"]
             lines = [
-                f"[{index}] kind: wiki",
+                f"[{index}] evidence_type: wiki_note",
+                f"[{index}] retrieval_score: {format_score(result.get('score'))}",
                 f"[{index}] source: {result['source']}",
                 f"[{index}] title: {doc.get('title')}",
                 f"[{index}] wiki_type: {doc.get('wiki_type')}",
@@ -100,16 +131,19 @@ def format_context(results: list[dict]) -> str:
                 str(result["text"]),
             ]
         else:
+            section_titles = format_title_paths(result.get("title_paths"))
             lines = [
-                f"[{index}] kind: manual",
+                f"[{index}] evidence_type: official_manual",
+                f"[{index}] retrieval_score: {format_score(result.get('score'))}",
+                f"[{index}] context_role: {result.get('context_role', 'seed')}",
                 f"[{index}] source: {result['source']}",
                 f"[{index}] page: {result['page']}",
                 f"[{index}] chunk_id: {result['chunk_id']}",
+                f"[{index}] section_titles:",
+                *(f"- {title}" for title in section_titles),
                 f"[{index}] text:",
                 str(result["text"]),
             ]
-        if result.get("title_paths"):
-            lines.insert(-2, f"[{index}] sections: {result['title_paths']}")
         blocks.append("\n".join(lines))
     return "\n\n---\n\n".join(blocks)
 
