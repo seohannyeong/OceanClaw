@@ -4,3 +4,13 @@ __pycache__/
 *.pyc
 
 artifacts/
+
+# Large raw AIS datasets are kept locally and converted into smaller outputs.
+data/raw/ais/*.csv
+data/processed/ais_voyage_events.csv
+index/ais.faiss
+index/ais_docs.json
+
+# Zenodo raw measurements are reproducible source data and are not stored in Git.
+data/raw/marine_engine_fault/*.csv
+data/raw/marine_engine_fault/**/*.csv

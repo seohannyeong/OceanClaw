@@ -11,7 +11,7 @@ from typing import Dict, List
 import faiss
 import numpy as np
 
-from .ollama_embed import embed_text
+from .ollama_embed import embed_text, embed_texts
 from .query_expansion import expand_query
 
 
@@ -91,15 +91,20 @@ def build_docs_faiss_index(
     base_url: str,
     timeout: int,
     text_field: str = "text",
+    batch_size: int = 64,
 ) -> int:
     if not documents:
         raise ValueError(f"No documents found: {source_path}")
 
+    if batch_size <= 0:
+        raise ValueError("batch_size must be positive")
+
     vectors: list[list[float]] = []
-    for index, doc in enumerate(documents, start=1):
-        doc_id = str(doc.get("chunk_id") or doc.get("event_id") or index)
-        print(f"Embedding {index}/{len(documents)}: {doc_id}")
-        vectors.append(embed_text(str(doc[text_field]), model, base_url, timeout))
+    for start in range(0, len(documents), batch_size):
+        batch = documents[start : start + batch_size]
+        texts = [str(doc[text_field]) for doc in batch]
+        vectors.extend(embed_texts(texts, model, base_url, timeout))
+        print(f"Embedding {min(start + len(batch), len(documents))}/{len(documents)}")
 
     matrix = normalize_vectors(vectors)
     faiss_index = faiss.IndexFlatIP(matrix.shape[1])

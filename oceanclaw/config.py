@@ -56,10 +56,16 @@ PDF_FAISS_PATH = project_path(os.getenv("PDF_FAISS_PATH", "index/pdf.faiss"))
 PDF_DOCS_PATH = project_path(os.getenv("PDF_DOCS_PATH", "index/pdf_docs.json"))
 
 SENSOR_EVENTS_PATH = project_path(
-    os.getenv("SENSOR_EVENTS_PATH", "data/processed/sensor_events.csv")
+    os.getenv("SENSOR_EVENTS_PATH", "data/processed/combined_sensor_events.csv")
 )
 SENSOR_FAISS_PATH = project_path(os.getenv("SENSOR_FAISS_PATH", "index/sensor.faiss"))
 SENSOR_DOCS_PATH = project_path(os.getenv("SENSOR_DOCS_PATH", "index/sensor_docs.json"))
+
+AIS_EVENTS_PATH = project_path(
+    os.getenv("AIS_EVENTS_PATH", "data/processed/ais_voyage_events.csv")
+)
+AIS_FAISS_PATH = project_path(os.getenv("AIS_FAISS_PATH", "index/ais.faiss"))
+AIS_DOCS_PATH = project_path(os.getenv("AIS_DOCS_PATH", "index/ais_docs.json"))
 
 WIKI_FAISS_PATH = project_path(os.getenv("WIKI_FAISS_PATH", "index/wiki.faiss"))
 WIKI_DOCS_PATH = project_path(os.getenv("WIKI_DOCS_PATH", "index/wiki_docs.json"))

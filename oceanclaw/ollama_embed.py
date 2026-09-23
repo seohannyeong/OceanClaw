@@ -69,4 +69,19 @@ def embed_texts(
     base_url: str,
     timeout: int,
 ) -> list[list[float]]:
+    if not texts:
+        return []
+
+    endpoint = f"{base_url.rstrip('/')}/api/embed"
+    payload = {"model": model, "input": texts}
+    try:
+        response = post_json(endpoint, payload, timeout)
+        embeddings = response.get("embeddings")
+        if isinstance(embeddings, list) and len(embeddings) == len(texts):
+            return embeddings
+    except RuntimeError:
+        raise
+    except Exception:
+        pass
+
     return [embed_text(text, model, base_url, timeout) for text in texts]

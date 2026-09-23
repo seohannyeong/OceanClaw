@@ -14,11 +14,11 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from . import config
-from .answer import answer_question, search_manual, search_sensor, search_wiki
+from .answer import answer_question, search_ais, search_manual, search_sensor, search_wiki
 from .ollama_embed import check_ollama
 from .wiki_writer import generate_wiki_document
 
-Route = Literal["manual", "sensor", "wiki", "both", "all"]
+Route = Literal["manual", "sensor", "ais", "wiki", "both", "all"]
 WikiType = Literal["component", "procedure", "log"]
 
 app = FastAPI(
@@ -38,7 +38,7 @@ class AskRequest(BaseModel):
     save_log: bool = Field(False, description="답변 결과를 wiki/logs Markdown 파일로 저장")
     route: Route | None = Field(
         None,
-        description="manual, sensor, wiki, both, all 중 하나로 검색 경로를 고정",
+        description="manual, sensor, ais, wiki, both, all 중 하나로 검색 경로를 고정",
     )
 
 
@@ -126,6 +126,15 @@ def search_wiki_endpoint(request: SearchRequest) -> dict:
     return {
         "query": request.query,
         "results": search_wiki(request.query, request.top_k),
+    }
+
+
+@app.post("/search/ais")
+def search_ais_endpoint(request: SearchRequest) -> dict:
+    """Search the AIS voyage-event index only."""
+    return {
+        "query": request.query,
+        "results": search_ais(request.query, request.top_k),
     }
 
 

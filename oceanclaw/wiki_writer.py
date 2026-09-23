@@ -10,6 +10,8 @@ from typing import Literal
 from . import config
 from .answer import (
     format_context,
+    search_ais,
+    search_ais_if_available,
     search_manual,
     search_sensor,
     search_wiki,
@@ -18,7 +20,7 @@ from .answer import (
 from .ollama_chat import chat
 
 WikiType = Literal["component", "procedure", "log"]
-WikiRoute = Literal["manual", "sensor", "wiki", "both", "all"]
+WikiRoute = Literal["manual", "sensor", "ais", "wiki", "both", "all"]
 
 WIKI_SYSTEM_PROMPT = """You are OceanClaw, a ship maintenance Wiki writer.
 Write Obsidian-compatible Markdown in Korean.
@@ -86,11 +88,18 @@ def collect_wiki_evidence(topic: str, route: WikiRoute, top_k: int) -> list[dict
         return search_manual(topic, top_k)
     if route == "sensor":
         return search_sensor(topic, top_k)
+    if route == "ais":
+        return search_ais(topic, top_k)
     if route == "wiki":
         return search_wiki(topic, top_k)
     if route == "both":
         return search_manual(topic, top_k) + search_sensor(topic, top_k)
-    return search_manual(topic, top_k) + search_sensor(topic, top_k) + search_wiki(topic, top_k)
+    return (
+        search_manual(topic, top_k)
+        + search_sensor(topic, top_k)
+        + search_wiki(topic, top_k)
+        + search_ais_if_available(topic, top_k)
+    )
 
 
 def render_sources(sources: list[str]) -> str:

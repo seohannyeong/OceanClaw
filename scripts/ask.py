@@ -51,6 +51,13 @@ def print_answer(result: dict, show_context: bool) -> None:
                 f"component={doc.get('component')} "
                 f"severity={doc.get('severity')}"
             )
+        elif item.get("kind") == "ais":
+            doc = item["document"]
+            print(
+                f"[{rank}] ais score={item['score']:.4f} "
+                f"vessel={doc.get('vessel_name') or '-'} "
+                f"mmsi={doc.get('mmsi')} event={doc.get('event_type')}"
+            )
         elif item.get("kind") == "wiki":
             doc = item["document"]
             print(
@@ -77,7 +84,7 @@ def main() -> int:
     parser.add_argument("--save-log", action="store_true", help="Save answer to wiki/logs")
     parser.add_argument(
         "--route",
-        choices=["manual", "sensor", "wiki", "both", "all"],
+        choices=["manual", "sensor", "ais", "wiki", "both", "all"],
         help="Override automatic routing",
     )
     parser.add_argument("--show-context", action="store_true")

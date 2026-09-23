@@ -70,6 +70,27 @@ def search_sensor(question: str, top_k: int) -> list[dict]:
     return results
 
 
+def search_ais(question: str, top_k: int) -> list[dict]:
+    results = search_faiss_index(
+        query=question,
+        faiss_path=config.AIS_FAISS_PATH,
+        docs_path=config.AIS_DOCS_PATH,
+        model=config.OLLAMA_EMBED_MODEL,
+        base_url=config.OLLAMA_BASE_URL,
+        timeout=config.OLLAMA_TIMEOUT,
+        top_k=top_k,
+    )
+    for result in results:
+        result["kind"] = "ais"
+    return results
+
+
+def search_ais_if_available(question: str, top_k: int) -> list[dict]:
+    if not config.AIS_FAISS_PATH.exists() or not config.AIS_DOCS_PATH.exists():
+        return []
+    return search_ais(question, top_k)
+
+
 def search_wiki(question: str, top_k: int) -> list[dict]:
     results = search_faiss_index(
         query=question,
@@ -118,6 +139,20 @@ def format_context(results: list[dict]) -> str:
                 f"[{index}] text:",
                 str(result["text"]),
             ]
+        elif result.get("kind") == "ais":
+            doc = result["document"]
+            lines = [
+                f"[{index}] evidence_type: ais_voyage_event",
+                f"[{index}] retrieval_score: {format_score(result.get('score'))}",
+                f"[{index}] event_id: {doc.get('event_id')}",
+                f"[{index}] vessel_name: {doc.get('vessel_name')}",
+                f"[{index}] mmsi: {doc.get('mmsi')}",
+                f"[{index}] event_type: {doc.get('event_type')}",
+                f"[{index}] navigation_status: {doc.get('navigation_status')}",
+                f"[{index}] period: {doc.get('start_time')} to {doc.get('end_time')}",
+                f"[{index}] text:",
+                str(result["text"]),
+            ]
         elif result.get("kind") == "wiki":
             doc = result["document"]
             lines = [
@@ -158,6 +193,12 @@ def unique_sources(results: list[dict]) -> list[str]:
                 f"sensor event {doc.get('event_id')} "
                 f"({doc.get('component')}, {doc.get('severity')})"
             )
+        elif result.get("kind") == "ais":
+            doc = result["document"]
+            label = (
+                f"AIS event {doc.get('event_id')} "
+                f"({doc.get('vessel_name') or doc.get('mmsi')}, {doc.get('event_type')})"
+            )
         elif result.get("kind") == "wiki":
             doc = result["document"]
             label = f"{result['source']} ({doc.get('title')})"
@@ -194,6 +235,9 @@ def answer_question(
     elif route_override == "wiki":
         route = "wiki"
         results = search_wiki(question, top_k)
+    elif route_override == "ais":
+        route = "ais"
+        results = search_ais(question, top_k)
     elif route_override == "both":
         route = "both"
         results = manual_results_for_question() + search_sensor(question, top_k)
@@ -203,18 +247,26 @@ def answer_question(
             manual_results_for_question()
             + search_sensor(question, top_k)
             + search_wiki(question, top_k)
+            + search_ais_if_available(question, top_k)
         )
     else:
         manual_results = manual_results_for_question()
         sensor_results = search_sensor(question, top_k)
+        ais_results = search_ais_if_available(question, top_k)
+        sensor_score = float(sensor_results[0].get("score", 0.0)) if sensor_results else 0.0
+        ais_score = float(ais_results[0].get("score", 0.0)) if ais_results else 0.0
+        if ais_score >= 0.55 and ais_score > sensor_score + 0.05:
+            route = "ais"
+            results = ais_results
         # Scores from different embedding models are not directly comparable.
-        route = route_by_score(manual_results, sensor_results) if manual_profile == "legacy" else "both"
-        if route == "manual":
-            results = manual_results
-        elif route == "sensor":
-            results = sensor_results
         else:
-            results = manual_results + sensor_results
+            route = route_by_score(manual_results, sensor_results) if manual_profile == "legacy" else "both"
+            if route == "manual":
+                results = manual_results
+            elif route == "sensor":
+                results = sensor_results
+            else:
+                results = manual_results + sensor_results
 
     filtered_results = [result for result in results if result.get("context_role") == "neighbor" or result["score"] >= min_score]
     retrieval_seconds = perf_counter() - started

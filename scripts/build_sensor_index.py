@@ -24,6 +24,7 @@ def main() -> int:
     parser.add_argument("--model", default=config.OLLAMA_EMBED_MODEL)
     parser.add_argument("--ollama-url", default=config.OLLAMA_BASE_URL)
     parser.add_argument("--timeout", type=int, default=config.OLLAMA_TIMEOUT)
+    parser.add_argument("--batch-size", type=int, default=64)
     args = parser.parse_args()
 
     events_path = config.project_path(str(args.events))
@@ -41,6 +42,7 @@ def main() -> int:
         base_url=args.ollama_url,
         timeout=args.timeout,
         text_field="text",
+        batch_size=args.batch_size,
     )
 
     print(f"[OK] indexed {count} sensor events")

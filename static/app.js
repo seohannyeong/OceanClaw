@@ -49,6 +49,10 @@ function sourceLabel(result) {
   if (result.kind === "sensor") {
     return result.chunk_id || "sensor event";
   }
+  if (result.kind === "ais") {
+    const document = result.document || {};
+    return `${document.vessel_name || document.mmsi || "AIS vessel"} · ${document.event_type || "voyage"}`;
+  }
   if (result.kind === "wiki") {
     return result.path || result.source || "wiki";
   }
