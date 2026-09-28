@@ -12,8 +12,8 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from oceanclaw import config
+from oceanclaw.ais_search import search_ais_hybrid
 from oceanclaw.ollama_embed import check_ollama
-from oceanclaw.vectorstore import search_faiss_index
 
 
 def print_results(query: str, results: list[dict]) -> None:
@@ -40,14 +40,14 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=config.OLLAMA_TIMEOUT)
     args = parser.parse_args()
     check_ollama(args.ollama_url, args.timeout)
-    results = search_faiss_index(
-        args.query,
-        config.project_path(str(args.faiss)),
-        config.project_path(str(args.docs)),
-        args.model,
-        args.ollama_url,
-        args.timeout,
-        args.top_k,
+    results = search_ais_hybrid(
+        query=args.query,
+        faiss_path=config.project_path(str(args.faiss)),
+        docs_path=config.project_path(str(args.docs)),
+        model=args.model,
+        base_url=args.ollama_url,
+        timeout=args.timeout,
+        top_k=args.top_k,
     )
     print_results(args.query, results)
     return 0

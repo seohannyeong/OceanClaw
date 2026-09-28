@@ -5,6 +5,7 @@ from __future__ import annotations
 from time import perf_counter
 
 from . import config
+from .ais_search import search_ais_hybrid
 from .ollama_chat import chat
 from .router import route_by_score
 from .vectorstore import search_faiss_index
@@ -71,7 +72,7 @@ def search_sensor(question: str, top_k: int) -> list[dict]:
 
 
 def search_ais(question: str, top_k: int) -> list[dict]:
-    results = search_faiss_index(
+    return search_ais_hybrid(
         query=question,
         faiss_path=config.AIS_FAISS_PATH,
         docs_path=config.AIS_DOCS_PATH,
@@ -80,9 +81,6 @@ def search_ais(question: str, top_k: int) -> list[dict]:
         timeout=config.OLLAMA_TIMEOUT,
         top_k=top_k,
     )
-    for result in results:
-        result["kind"] = "ais"
-    return results
 
 
 def search_ais_if_available(question: str, top_k: int) -> list[dict]:

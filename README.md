@@ -418,6 +418,31 @@ tailscale status
 ping 100.103.244.58
 ```
 
+### AIS 운항 검색
+
+AIS 검색은 FAISS 의미 검색 전에 질문에서 운항 상태와 수치 조건을 추출합니다.
+
+```text
+정박 -> anchored, moored
+정지 -> stationary
+저속 -> low-speed movement
+운항 중 -> underway
+조업 -> fishing
+좌초 -> aground
+```
+
+시간, MMSI, 연월 조건도 함께 사용할 수 있습니다.
+
+```bash
+python scripts/search_ais.py "괌에서 정박한 선박" --top-k 3
+python scripts/search_ais.py "10시간 이상 정박한 선박" --top-k 3
+python scripts/search_ais.py "MMSI 431341000의 2025년 8월 운항 기록" --top-k 3
+```
+
+`정박`은 AIS 상태가 명확한 `anchored`, `moored`만 검색합니다. 속도만 낮은 `stationary`는 정박으로 확정하지 않습니다.
+
+API에서는 `/search/ais` 또는 `/ask`의 `route: "ais"`를 사용합니다.
+
 ## 10. 평가셋과 테스트 기록
 
 평가 관련 파일은 `data/eval`에 있습니다.
@@ -484,7 +509,8 @@ python scripts/validate_holdout.py --api-url http://127.0.0.1:8000 --require-jet
 - PDF 텍스트 추출 및 JSONL 저장
 - LangChain 기반 chunk 분할
 - Ollama embedding 기반 문서 vector 변환
-- FAISS 기반 manual, sensor, wiki 검색
+- FAISS 기반 manual, sensor, wiki, AIS 검색
+- 운항 상태, 시간, MMSI, 날짜 조건을 결합한 AIS Hybrid 검색
 - 한국어 질문과 영어 매뉴얼 검색을 보완하는 query expansion
 - BGE-M3와 제목 정보 기반 매뉴얼 검색
 - Ollama chat 기반 RAG 답변 생성
@@ -513,6 +539,10 @@ python scripts/validate_holdout.py --api-url http://127.0.0.1:8000 --require-jet
 ```text
 tmp/
 output/video/
+data/raw/ais/*.csv
+data/processed/ais_voyage_events.csv
+index/ais.faiss
+index/ais_docs.json
 ```
 
 전체 파일을 무조건 `git add .` 하기보다, 커밋할 파일을 확인한 뒤 올리는 것을 권장합니다.
